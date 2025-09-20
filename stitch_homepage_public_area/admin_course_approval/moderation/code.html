@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#13a4ec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101c22",
+            },
+            fontFamily: {
+              display: ["Manrope"],
+            },
+            borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+          },
+        },
+      };
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex min-h-screen">
+<aside class="w-64 shrink-0 bg-white dark:bg-background-dark/50 border-r border-slate-200 dark:border-slate-800 flex flex-col">
+<div class="p-6">
+<h1 class="text-2xl font-bold text-slate-900 dark:text-white">EduHub</h1>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg bg-primary/10 text-primary dark:bg-primary/20" href="#">
+<span class="material-symbols-outlined">school</span>
+<span>Courses</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Students</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span>Instructors</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="px-4 py-6 mt-auto space-y-2">
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">help</span>
+<span>Help and Support</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">feedback</span>
+<span>Feedback</span>
+</a>
+</div>
+</aside>
+<main class="flex-1 p-8">
+<header class="flex items-center justify-between mb-8">
+<h1 class="text-3xl font-bold text-slate-900 dark:text-white">Course Approval</h1>
+<div class="flex items-center gap-4">
+<button class="relative text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<img alt="Admin avatar" class="w-10 h-10 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOkuz30F_IkBUNHwiJLrvsKaAdUUMiInBy_tRCFuW0twtp9bzBWMdfAYSztXw5tvOA7cFZf-ipAE0L5iCTe4I42SeNd4I01SCiYmuR7_Gr6XDDJr_WbPGczFEw9APQ0IkHS8Zw9obN2pFcVulNYzZa0-9F9Cc6cEJBVqxbWKwff29UCt4rDjRUoaZ1wy2N-2bw0whBgtaNz6NOR5htv4t9awCn6vcPrsvmcv4nBM8I9hWIvGD4q0D3AGEVmSoJ1lDp3aw9tt9nXbEv"/>
+</div>
+</header>
+<div class="space-y-8">
+<div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl shadow-sm">
+<h2 class="text-xl font-bold text-slate-800 dark:text-white mb-4">Pending Courses</h2>
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-left text-slate-500 dark:text-slate-400">
+<thead class="text-xs text-slate-700 dark:text-slate-300 uppercase bg-slate-50 dark:bg-slate-800">
+<tr>
+<th class="px-6 py-3" scope="col">Course Title</th>
+<th class="px-6 py-3" scope="col">Instructor</th>
+<th class="px-6 py-3" scope="col">Submission Date</th>
+<th class="px-6 py-3 text-center" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="bg-white dark:bg-background-dark/50 border-b dark:border-slate-800">
+<th class="px-6 py-4 font-medium text-slate-900 dark:text-white whitespace-nowrap" scope="row">Advanced Sinhala Literature</th>
+<td class="px-6 py-4">Mr. Kamal Perera</td>
+<td class="px-6 py-4">2024-07-26</td>
+<td class="px-6 py-4 text-center">
+<button class="font-medium text-primary hover:underline">Review</button>
+</td>
+</tr>
+<tr class="bg-white dark:bg-background-dark/50 border-b dark:border-slate-800">
+<th class="px-6 py-4 font-medium text-slate-900 dark:text-white whitespace-nowrap" scope="row">Mathematics for Grade 11</th>
+<td class="px-6 py-4">Ms. Nimali Silva</td>
+<td class="px-6 py-4">2024-07-25</td>
+<td class="px-6 py-4 text-center">
+<button class="font-medium text-primary hover:underline">Review</button>
+</td>
+</tr>
+<tr class="bg-white dark:bg-background-dark/50">
+<th class="px-6 py-4 font-medium text-slate-900 dark:text-white whitespace-nowrap" scope="row">History of Sri Lanka</th>
+<td class="px-6 py-4">Dr. Rohan Fernando</td>
+<td class="px-6 py-4">2024-07-24</td>
+<td class="px-6 py-4 text-center">
+<button class="font-medium text-primary hover:underline">Review</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl shadow-sm">
+<h2 class="text-xl font-bold text-slate-800 dark:text-white mb-4">Active Courses</h2>
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-left text-slate-500 dark:text-slate-400">
+<thead class="text-xs text-slate-700 dark:text-slate-300 uppercase bg-slate-50 dark:bg-slate-800">
+<tr>
+<th class="px-6 py-3" scope="col">Course Title</th>
+<th class="px-6 py-3" scope="col">Instructor</th>
+<th class="px-6 py-3" scope="col">Status</th>
+<th class="px-6 py-3 text-center" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="bg-white dark:bg-background-dark/50 border-b dark:border-slate-800">
+<th class="px-6 py-4 font-medium text-slate-900 dark:text-white whitespace-nowrap" scope="row">Physics for A-Levels</th>
+<td class="px-6 py-4">Mr. Asanka Rajapaksa</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">Active</span>
+</td>
+<td class="px-6 py-4 text-center space-x-2">
+<button class="font-medium text-primary hover:underline">Edit</button>
+<button class="font-medium text-amber-500 hover:underline">Archive</button>
+</td>
+</tr>
+<tr class="bg-white dark:bg-background-dark/50 border-b dark:border-slate-800">
+<th class="px-6 py-4 font-medium text-slate-900 dark:text-white whitespace-nowrap" scope="row">English Language Skills</th>
+<td class="px-6 py-4">Ms. Deepani Gunawardena</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">Active</span>
+</td>
+<td class="px-6 py-4 text-center space-x-2">
+<button class="font-medium text-primary hover:underline">Edit</button>
+<button class="font-medium text-amber-500 hover:underline">Archive</button>
+</td>
+</tr>
+<tr class="bg-white dark:bg-background-dark/50">
+<th class="px-6 py-4 font-medium text-slate-900 dark:text-white whitespace-nowrap" scope="row">Business Studies for O-Levels</th>
+<td class="px-6 py-4">Mr. Chandana Wijesinghe</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">Active</span>
+</td>
+<td class="px-6 py-4 text-center space-x-2">
+<button class="font-medium text-primary hover:underline">Edit</button>
+<button class="font-medium text-amber-500 hover:underline">Archive</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+body {
+  background-color: #fdfdfd !important;
+}
+.container {
+  @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-full;
+}
+
+.container-lg {
+  @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl;
+}
+
+.container-fluid {
+  @apply w-full px-4 sm:px-6 lg:px-8;
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EduLanka - Course Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .custom-checkbox:checked {
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
+<div class="flex flex-col min-h-screen">
+<header class="bg-background-light dark:bg-background-dark/70 backdrop-blur-sm sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-4">
+<div class="text-primary size-7">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold text-slate-900 dark:text-white">EduLanka</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium text-primary dark:text-primary" href="#">Courses</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Instructors</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">About Us</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBSa9-LpVjtpfAs7rDX1JCNRIX7pzJw9fTyelb6qVhDyDAcFRS6FaqxtGjhk28WeZZX3k_JXgLslFU4hv2LpOQc4h3pJXHvL7MbajyVOdhcbruqC0qU5t8Iiu8Zmz7StCd9YptIkJrxtChvqE8pJ_7FE0pnfI5k6kcN35VLJp9PI63yMp0SDarRwOEDjcRrY4xyAZYfpgGizi2lzcO8WrNlDAxY1Pm1Bso2Cdhk4gGPAc7ByNVtVVXt0_1CsrDA4ZtIfAfyRLJnQr69");'></div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="text-sm text-slate-500 dark:text-slate-400 mb-6">
+<a class="hover:text-primary" href="#">Courses</a>
+<span>/</span>
+<span class="text-slate-700 dark:text-slate-200">Mathematics</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 xl:gap-12">
+<div class="lg:col-span-2">
+<div class="bg-white dark:bg-background-dark/50 p-6 sm:p-8 rounded-xl shadow-sm">
+<div class="mb-6">
+<h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-2">Advanced Mathematics for A-Level Students</h2>
+<p class="text-slate-600 dark:text-slate-300">This comprehensive course covers all essential topics in advanced mathematics, preparing students for the A-Level examinations with in-depth explanations, practice problems, and mock tests.</p>
+</div>
+<div class="border-b border-slate-200 dark:border-slate-800 mb-6">
+<nav class="flex space-x-8 -mb-px">
+<a class="whitespace-nowrap py-4 px-1 border-b-2 border-primary font-medium text-sm text-primary" href="#">Overview</a>
+<a class="whitespace-nowrap py-4 px-1 border-b-2 border-transparent hover:border-slate-300 dark:hover:border-slate-600 font-medium text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200" href="#">Syllabus</a>
+<a class="whitespace-nowrap py-4 px-1 border-b-2 border-transparent hover:border-slate-300 dark:hover:border-slate-600 font-medium text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200" href="#">Reviews</a>
+</nav>
+</div>
+<div class="space-y-8">
+<div>
+<h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-3">Course Description</h3>
+<p class="text-slate-600 dark:text-slate-300 leading-relaxed">This course is designed for students preparing for the A-Level Mathematics examination. It covers all key topics, including calculus, algebra, geometry, and statistics, with a focus on problem-solving techniques and exam strategies. The course includes video lectures, interactive exercises, and regular assessments to ensure a thorough understanding of the subject matter.</p>
+</div>
+<div>
+<h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-4">Instructor</h3>
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark p-4 rounded-lg">
+<div class="w-14 h-14 rounded-full bg-cover bg-center flex-shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBq2zVdDD8k2IobsBsAd3jw0pAsCWob_q76kEIc3s2e8kUpjIxFgw4QkZgQIQtfcsYc20gmarRdfbukwmnSwdZP4nJ5lIXbjqayH_g2bOA19qFCMbL5K2hFnhctR2sHQSXL7_mBx1oJQoAFfh-bFUhyDFbA8OpmzsI0iex80wWfBzRpwPwlRKi7DHB2946vlcOPSnDJPcdwF0HizBigVhsMQgaJuJjponQWq2BWOogeHt5xc-so4nHFlygFQrbMbVT8061DDGXML5CY");'></div>
+<div>
+<p class="font-bold text-slate-800 dark:text-slate-100">Dr. Anjali Perera</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Mathematics Instructor</p>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-4">Learning Outcomes</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer">
+<input checked="" class="custom-checkbox h-5 w-5 rounded border-slate-300 dark:border-slate-700 bg-transparent text-primary checked:bg-primary checked:border-transparent focus:ring-primary focus:ring-offset-background-light dark:focus:ring-offset-background-dark" type="checkbox"/>
+<span class="text-slate-600 dark:text-slate-300">Master advanced mathematical concepts</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input checked="" class="custom-checkbox h-5 w-5 rounded border-slate-300 dark:border-slate-700 bg-transparent text-primary checked:bg-primary checked:border-transparent focus:ring-primary focus:ring-offset-background-light dark:focus:ring-offset-background-dark" type="checkbox"/>
+<span class="text-slate-600 dark:text-slate-300">Develop problem-solving skills</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input checked="" class="custom-checkbox h-5 w-5 rounded border-slate-300 dark:border-slate-700 bg-transparent text-primary checked:bg-primary checked:border-transparent focus:ring-primary focus:ring-offset-background-light dark:focus:ring-offset-background-dark" type="checkbox"/>
+<span class="text-slate-600 dark:text-slate-300">Prepare for A-Level examinations</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="custom-checkbox h-5 w-5 rounded border-slate-300 dark:border-slate-700 bg-transparent text-primary checked:bg-primary checked:border-transparent focus:ring-primary focus:ring-offset-background-light dark:focus:ring-offset-background-dark" type="checkbox"/>
+<span class="text-slate-600 dark:text-slate-300">Gain confidence in mathematics</span>
+</label>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-3">Prerequisites</h3>
+<p class="text-slate-600 dark:text-slate-300 leading-relaxed">Students should have a strong foundation in basic mathematics and a keen interest in learning advanced topics. Prior completion of O-Level Mathematics or equivalent is recommended.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-1 space-y-8">
+<div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl shadow-sm">
+<div class="aspect-video bg-slate-200 dark:bg-slate-800 rounded-lg mb-6 flex items-center justify-center">
+<button class="bg-white/20 backdrop-blur-sm p-4 rounded-full">
+<span class="material-symbols-outlined text-white text-5xl">play_arrow</span>
+</button>
+</div>
+<div class="text-4xl font-bold text-slate-900 dark:text-white mb-2">LKR 15,000</div>
+<p class="text-slate-500 dark:text-slate-400 mb-6">Full lifetime access</p>
+<div class="space-y-3">
+<button class="w-full flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold hover:opacity-90 transition-opacity">Enroll Now</button>
+<button class="w-full flex items-center justify-center rounded-lg h-12 px-6 bg-primary/10 dark:bg-primary/20 text-primary font-bold hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">Add to Cart</button>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl shadow-sm">
+<h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-4">Course Details</h3>
+<div class="space-y-4 text-sm">
+<div class="flex justify-between items-center border-b border-slate-200 dark:border-slate-800 py-4">
+<p class="text-slate-500 dark:text-slate-400">Duration</p>
+<p class="font-medium text-slate-800 dark:text-slate-200">12 Weeks</p>
+</div>
+<div class="flex justify-between items-center border-b border-slate-200 dark:border-slate-800 py-4">
+<p class="text-slate-500 dark:text-slate-400">Level</p>
+<p class="font-medium text-slate-800 dark:text-slate-200">Advanced</p>
+</div>
+<div class="flex justify-between items-center border-b border-slate-200 dark:border-slate-800 py-4">
+<p class="text-slate-500 dark:text-slate-400">Language</p>
+<p class="font-medium text-slate-800 dark:text-slate-200">Sinhala</p>
+</div>
+<div class="flex justify-between items-center pt-4">
+<p class="text-slate-500 dark:text-slate-400">Certificate</p>
+<p class="font-medium text-slate-800 dark:text-slate-200">Certificate of Completion</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

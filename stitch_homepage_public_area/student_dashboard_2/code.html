@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>Password Reset</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#13a4ec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101c22",
+            },
+            fontFamily: {
+              display: ["Manrope", "sans-serif"],
+              body: ["Noto Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              "2xl": "1rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body text-gray-800 dark:text-gray-200">
+<div class="flex min-h-screen items-center justify-center p-4 sm:p-6 lg:p-8">
+<div class="w-full max-w-md">
+<div class="bg-white dark:bg-background-dark/50 rounded-2xl shadow-lg p-8 md:p-10">
+<div class="text-center">
+<h1 class="text-3xl font-bold text-gray-900 dark:text-white font-display">
+            Reset Your Password
+          </h1>
+<p class="mt-2 text-gray-600 dark:text-gray-400">
+            Enter your email address and we'll send you a link to reset your password.
+          </p>
+</div>
+<form class="mt-8 space-y-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="email-address">
+              Email address
+            </label>
+<div class="mt-2">
+<input autocomplete="email" class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700/50 px-4 py-3 text-gray-900 dark:text-white shadow-sm focus:border-primary focus:ring-primary placeholder-gray-400 dark:placeholder-gray-500" id="email-address" name="email" placeholder="you@example.com" required="" type="email"/>
+</div>
+</div>
+<div>
+<button class="flex w-full justify-center rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-colors" type="submit">
+              Send Reset Link
+            </button>
+</div>
+</form>
+<div class="mt-6 text-center">
+<p class="text-sm text-gray-500 dark:text-gray-400">
+            Remember your password?
+            <a class="font-medium text-primary hover:text-primary/90" href="#">
+              Sign in
+            </a>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

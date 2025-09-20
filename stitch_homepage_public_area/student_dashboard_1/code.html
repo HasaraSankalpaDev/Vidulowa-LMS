@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#13a4ec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101c22",
+            },
+            fontFamily: {
+              display: ["Manrope"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex min-h-screen">
+<aside class="flex w-64 flex-col bg-white dark:bg-background-dark p-6">
+<div class="flex items-center gap-3 mb-10">
+<div class="size-12 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCPRbDVQADjYCiY7-mwWRNgn2s0-PL8VfR4xvYVn83FpslmdrgNHzwFSqmAR9eRcptuBYYUlaG7ZlQAg-5Zox7wBLIsB0iGcdTExrzjM_HlTeUiIAP9lIGoBzKgPeL2rDRrbPyDrc1oBHf2-wTWMQmcvkqyr8sRAZ40LZ5uq8BqA2bkh4ntOqd6E22tF0mp3qI14-65yLWeKcg8e3i25G8sDVXaLOuuEM-6Rk2TmM_D-uVWB0xMv31ELzSZwpL9cm4oO-nmDPBiCFkY");'></div>
+<div>
+<h1 class="text-base font-bold text-gray-800 dark:text-white">
+              S. Perera
+            </h1>
+<p class="text-sm text-gray-500 dark:text-gray-400">Student</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 rounded-lg bg-primary/10 dark:bg-primary/20 px-4 py-2.5 text-sm font-medium text-primary" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+            Dashboard
+          </a>
+<a class="flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-outlined">school</span>
+            Courses
+          </a>
+<a class="flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-outlined">assignment</span>
+            Assignments &amp; Exams
+          </a>
+<a class="flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+            Class Schedule
+          </a>
+<a class="flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-outlined">notifications</span>
+            Notifications
+          </a>
+<a class="flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-outlined">person</span>
+            Profile &amp; Settings
+          </a>
+</nav>
+</aside>
+<main class="flex-1 p-8">
+<header class="mb-8">
+<h1 class="text-3xl font-bold text-gray-900 dark:text-white">
+            Student Dashboard
+          </h1>
+<p class="text-gray-500 dark:text-gray-400 mt-1">
+            Welcome back, S. Perera! Here's an overview of your learning
+            journey.
+          </p>
+</header>
+<section>
+<h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+            Enrolled Courses
+          </h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="bg-white dark:bg-background-dark/50 rounded-xl shadow-sm overflow-hidden">
+<div class="h-40 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuASHU6xMWeGjsEdJUsXYNi_mrqrdL0Gjb0wJhG8rKQyPq-4n4hp9RfE_CvFajSTdaihrh5HWK2QoGDOP1_zAw0CA4VkOcDXt3eyQXbAN5dJYLsEhLWZc8nFjrsB0rV-E5XWLea7yRllzopanGHguhSzVVeVUVgou7sUT5H6FwIYOuZM7ibAPj8TjDMVDf9Wb8zgW5ueNLjyrqaIdZClkGYE-Y36ubzFWtx42r2zcHvJGecTEnWCYRAo4IVGLk6bza8DF9fjpGqLWtbs");'></div>
+<div class="p-4">
+<h3 class="font-bold text-lg text-gray-800 dark:text-white">
+                  Advanced Mathematics
+                </h3>
+<div class="mt-2">
+<div class="flex justify-between text-sm text-gray-500 dark:text-gray-400">
+<span>Progress</span>
+<span>75%</span>
+</div>
+<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 mt-1">
+<div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark/50 rounded-xl shadow-sm overflow-hidden">
+<div class="h-40 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDkQVSKkS2lpptrsQKCirFTyhYefxkY4b-8YgynfyfYLDwz4rufNaABT-FkvYpo7D3oYQdCanlCJtxRv5Evc19Xw6UmbwHauqmpMpjqUGWUiqb4VHqf6kn0widY8_8TcHgFSh5oW8OXfD_bVBOJyR9ZRWqGL0s0IeWj_USB3DFY3vOFI0zIaL-gX3JdrjerwBTeHl7KrL2ctLf1z-IYOaxGdA0dc6efpYkli7ki-2ElsnVT7hjDjHTfaeHKcdLw93t3utRJRouIcMMJ");'></div>
+<div class="p-4">
+<h3 class="font-bold text-lg text-gray-800 dark:text-white">
+                  Physics Fundamentals
+                </h3>
+<div class="mt-2">
+<div class="flex justify-between text-sm text-gray-500 dark:text-gray-400">
+<span>Progress</span>
+<span>50%</span>
+</div>
+<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 mt-1">
+<div class="bg-primary h-2 rounded-full" style="width: 50%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark/50 rounded-xl shadow-sm overflow-hidden">
+<div class="h-40 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDGQ2kdpRfzf0h3NP-Kgm4Eif8gOsaXq2bO-La7Zrt-T6QqqUg3rFP5Frg282agthHV22q4_W0ddB2VrbmUrG8VerKKq2Dl6JD9PNftWMKij2VH4YP-rbvxfyvsZoX0Sl4nurM9CEmsrtwkCjB5DlJz8ktrQMqlI1KoBOmGgBO0twugXoyyUuXhrIN9pxViKpPpnZw_NUpmVJwSsMgOWkD1CUkzxiyO5mnh6mliBBv881ZkXX3Eh5GoAZ0BKRroMrh9MOr5lUfL83bd");'></div>
+<div class="p-4">
+<h3 class="font-bold text-lg text-gray-800 dark:text-white">
+                  Chemistry Essentials
+                </h3>
+<div class="mt-2">
+<div class="flex justify-between text-sm text-gray-500 dark:text-gray-400">
+<span>Progress</span>
+<span>25%</span>
+</div>
+<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 mt-1">
+<div class="bg-primary h-2 rounded-full" style="width: 25%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="mt-8">
+<h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+            Upcoming Classes
+          </h2>
+<div class="bg-white dark:bg-background-dark/50 rounded-xl shadow-sm overflow-x-auto">
+<table class="w-full text-sm text-left">
+<thead class="text-xs text-gray-700 dark:text-gray-400 uppercase bg-gray-50 dark:bg-gray-800">
+<tr>
+<th class="px-6 py-3" scope="col">Course</th>
+<th class="px-6 py-3" scope="col">Topic</th>
+<th class="px-6 py-3" scope="col">Date &amp; Time</th>
+<th class="px-6 py-3" scope="col">Teacher</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b dark:border-gray-700">
+<th class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap" scope="row">
+                    Advanced Mathematics
+                  </th>
+<td class="px-6 py-4 text-gray-600 dark:text-gray-300">
+                    Calculus Review
+                  </td>
+<td class="px-6 py-4 text-gray-600 dark:text-gray-300">
+                    July 15, 2024, 10:00 AM
+                  </td>
+<td class="px-6 py-4 text-gray-600 dark:text-gray-300">
+                    Mr. Silva
+                  </td>
+</tr>
+<tr class="border-b dark:border-gray-700">
+<th class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap" scope="row">
+                    Physics Fundamentals
+                  </th>
+<td class="px-6 py-4 text-gray-600 dark:text-gray-300">
+                    Mechanics
+                  </td>
+<td class="px-6 py-4 text-gray-600 dark:text-gray-300">
+                    July 16, 2024, 2:00 PM
+                  </td>
+<td class="px-6 py-4 text-gray-600 dark:text-gray-300">
+                    Ms. Fernando
+                  </td>
+</tr>
+<tr>
+<th class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap" scope="row">
+                    Chemistry Essentials
+                  </th>
+<td class="px-6 py-4 text-gray-600 dark:text-gray-300">
+                    Chemical Reactions
+                  </td>
+<td class="px-6 py-4 text-gray-600 dark:text-gray-300">
+                    July 17, 2024, 11:00 AM
+                  </td>
+<td class="px-6 py-4 text-gray-600 dark:text-gray-300">
+                    Dr. Rajapaksa
+                  </td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="mt-8">
+<h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+            Assignments &amp; Exams
+          </h2>
+<div class="bg-white dark:bg-background-dark/50 rounded-xl shadow-sm overflow-x-auto">
+<table class="w-full text-sm text-left">
+<thead class="text-xs text-gray-700 dark:text-gray-400 uppercase bg-gray-50 dark:bg-gray-800">
+<tr>
+<th class="px-6 py-3" scope="col">Assignment/Exam</th>
+<th class="px-6 py-3" scope="col">Course</th>
+<th class="px-6 py-3" scope="col">Deadline</th>
+<th class="px-6 py-3" scope="col">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b dark:border-gray-700">
+<th class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap" scope="row">
+                    Mathematics Assignment 2
+                  </th>
+<td class="px-6 py-4 text-gray-600 dark:text-gray-300">
+                    Advanced Mathematics
+                  </td>
+<td class="px-6 py-4 text-gray-600 dark:text-gray-300">
+                    July 20, 2024
+                  </td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 text-xs font-medium rounded-full bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-300">Submitted</span>
+</td>
+</tr>
+<tr class="border-b dark:border-gray-700">
+<th class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap" scope="row">
+                    Physics Exam 1
+                  </th>
+<td class="px-6 py-4 text-gray-600 dark:text-gray-300">
+                    Physics Fundamentals
+                  </td>
+<td class="px-6 py-4 text-gray-600 dark:text-gray-300">
+                    July 22, 2024
+                  </td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 text-xs font-medium rounded-full bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-300">Not Submitted</span>
+</td>
+</tr>
+<tr>
+<th class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap" scope="row">
+                    Chemistry Assignment 1
+                  </th>
+<td class="px-6 py-4 text-gray-600 dark:text-gray-300">
+                    Chemistry Essentials
+                  </td>
+<td class="px-6 py-4 text-gray-600 dark:text-gray-300">
+                    July 25, 2024
+                  </td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 text-xs font-medium rounded-full bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-300">Submitted</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+</div>
+
+</body></html>

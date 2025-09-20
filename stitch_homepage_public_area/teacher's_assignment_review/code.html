@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stitch Design</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope:wght@400;500;700;800" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#13a4ec",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101c22",
+          },
+          fontFamily: {
+            "display": ["Manrope"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-neutral-800 dark:text-neutral-200">
+<div class="flex min-h-screen w-full flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-primary/20 dark:border-primary/30 px-10 py-4 bg-white/50 dark:bg-black/20 backdrop-blur-sm sticky top-0 z-10">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path></svg>
+</div>
+<h2 class="text-xl font-bold">EduLink</h2>
+</div>
+<nav class="flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Courses</a>
+<a class="text-sm font-medium text-primary" href="#">Assignments</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Grades</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Messages</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="relative">
+<button class="material-symbols-outlined text-2xl text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors">notifications</button>
+<div class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-primary rounded-full"></div>
+</div>
+<img alt="Teacher avatar" class="size-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3fs3_sCKwfoaEM5Jd2upiZz6sByNIhEstPMzRshdGlcpfsiODUqfUeCbnL3B4g0F8OYKQBspS50ML1_d3KW1Yf4sTkpKjxM_IdB364MP-R6fSmScQptC5hew21QFCXZmjPv2e1H4DU5RYTrwHev4_Jm_6zz59WXAhU_RQdhaWg2ePpaWDZWIrCljZRiiS5G06CQxBV9QqkE1iTd3HuEs7cb8RMI3ZOqRNISmhWoeVZGnf9Tqy8f90BDg1vzsISdL3FmAOwMK3HCUy"/>
+</div>
+</header>
+<main class="flex-1 px-10 py-8">
+<div class="grid grid-cols-1 @container lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 flex flex-col gap-8">
+<div class="bg-white dark:bg-background-dark rounded-xl shadow-sm p-6">
+<div class="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400 mb-4">
+<a class="hover:text-primary" href="#">Assignments</a>
+<span class="material-symbols-outlined text-base">chevron_right</span>
+<a class="hover:text-primary" href="#">Physics</a>
+<span class="material-symbols-outlined text-base">chevron_right</span>
+<span class="font-medium text-neutral-800 dark:text-neutral-200">Assignment 1: Mechanics</span>
+</div>
+<h1 class="text-3xl font-bold text-neutral-900 dark:text-white">Assignment 1: Mechanics</h1>
+<p class="text-neutral-500 dark:text-neutral-400 mt-1">Due Date: 2024-03-15</p>
+<div class="mt-6 border-t border-neutral-200 dark:border-neutral-700 pt-6">
+<h3 class="text-lg font-semibold text-neutral-900 dark:text-white">Instructions</h3>
+<p class="mt-2 text-neutral-600 dark:text-neutral-300">
+                Solve all problems in the attached document and submit your solutions as a single PDF file. Show all your work for full credit.
+              </p>
+<div class="mt-4 flex items-center gap-3 bg-background-light dark:bg-black/20 p-3 rounded-lg border border-neutral-200 dark:border-neutral-700">
+<div class="flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/20 text-primary size-10 shrink-0">
+<span class="material-symbols-outlined">description</span>
+</div>
+<p class="font-medium flex-1 truncate">Assignment 1 Instructions.pdf</p>
+<button class="material-symbols-outlined text-neutral-500 dark:text-neutral-400 hover:text-primary transition-colors">download</button>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark rounded-xl shadow-sm p-6">
+<h3 class="text-lg font-semibold text-neutral-900 dark:text-white">Student Submission</h3>
+<div class="mt-4 flex items-center gap-3 bg-background-light dark:bg-black/20 p-3 rounded-lg border border-neutral-200 dark:border-neutral-700">
+<div class="flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/20 text-primary size-10 shrink-0">
+<span class="material-symbols-outlined">description</span>
+</div>
+<p class="font-medium flex-1 truncate">Student Submission.pdf</p>
+<button class="material-symbols-outlined text-neutral-500 dark:text-neutral-400 hover:text-primary transition-colors">visibility</button>
+<button class="material-symbols-outlined text-neutral-500 dark:text-neutral-400 hover:text-primary transition-colors">download</button>
+</div>
+<div class="mt-6">
+<label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2" for="comment">Add Comment</label>
+<textarea class="form-textarea w-full resize-none rounded-lg bg-background-light dark:bg-black/20 border-neutral-300 dark:border-neutral-700 focus:border-primary focus:ring-primary placeholder:text-neutral-400 dark:placeholder:text-neutral-500 min-h-[120px]" id="comment" placeholder="Add a comment..."></textarea>
+<div class="flex justify-end mt-3">
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary/20 dark:bg-primary/30 text-primary text-sm font-bold hover:bg-primary/30 dark:hover:bg-primary/40 transition-colors">
+<span class="truncate">Save Comment</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-1 flex flex-col gap-8">
+<div class="bg-white dark:bg-background-dark rounded-xl shadow-sm p-6 sticky top-28">
+<h3 class="text-lg font-semibold text-neutral-900 dark:text-white">Student</h3>
+<div class="flex items-center gap-4 mt-4">
+<img alt="Student avatar" class="size-14 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8y6Y7AQ_iI8c0wQz23ZQl2rcPFWUxP20gn_KMWXSdRPoV9yq4XMv6FYMWtQXtlyVGONQ6_WXogrB-owx20WiDjSalLFGugtzRZHEvyEa03_dnKE0UzgPJNh7atpcvgo6wucR9SnTu3sbLq8qJYrpaIKsXppv84vGLQOjEhB14q_5GHBukkOmQgrmLKdm52HCAf7ajlGAUsOqrRLFbeynGSnWDvcQs0OCxfYOWWl3z1TISVHAkY3cxJyLP-o_XWfIn20lYbEVeb89U"/>
+<div>
+<p class="font-semibold text-neutral-800 dark:text-neutral-100">Nimal Perera</p>
+<p class="text-sm text-neutral-500 dark:text-neutral-400">Student ID: 12345</p>
+</div>
+</div>
+<div class="mt-6 border-t border-neutral-200 dark:border-neutral-700 pt-6">
+<h3 class="text-lg font-semibold text-neutral-900 dark:text-white">Grading</h3>
+<div class="mt-4 flex flex-col gap-4">
+<div>
+<label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2" for="grade">Grade</label>
+<input class="form-input w-full rounded-lg bg-background-light dark:bg-black/20 border-neutral-300 dark:border-neutral-700 focus:border-primary focus:ring-primary placeholder:text-neutral-400 dark:placeholder:text-neutral-500" id="grade" placeholder="Enter Grade (0-100)" type="number"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2" for="feedback">Feedback</label>
+<textarea class="form-textarea w-full resize-none rounded-lg bg-background-light dark:bg-black/20 border-neutral-300 dark:border-neutral-700 focus:border-primary focus:ring-primary placeholder:text-neutral-400 dark:placeholder:text-neutral-500 min-h-[160px]" id="feedback" placeholder="Provide detailed feedback..."></textarea>
+</div>
+</div>
+<div class="mt-6">
+<button class="flex w-full items-center justify-center gap-2 rounded-lg h-11 px-4 bg-primary text-white text-sm font-bold hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-xl">send</span>
+<span class="truncate">Submit Grade &amp; Feedback</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EduLanka - Login</title>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+    :root {
+      --primary: #13a4ec;
+      --background-light: #f6f7f8;
+      --text-primary: #111827;
+      --text-secondary: #6b7280;
+      --card-background: #ffffff;
+      --border-color: #e5e7eb;
+    }
+    body {
+      font-family: 'Manrope', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-[var(--background-light)]">
+<div class="flex h-screen w-full items-center justify-center p-4">
+<div class="w-full max-w-md">
+<div class="rounded-xl bg-[var(--card-background)] p-8 shadow-lg">
+<div class="text-center mb-8">
+<div class="inline-flex items-center justify-center mb-4">
+<svg class="h-8 w-8 text-[var(--primary)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+<h1 class="ml-2 text-2xl font-bold text-[var(--text-primary)]">EduLanka</h1>
+</div>
+<h2 class="text-2xl font-bold text-[var(--text-primary)]">Welcome Back!</h2>
+<p class="mt-2 text-sm text-[var(--text-secondary)]">Login to continue your learning journey.</p>
+</div>
+<form class="space-y-6" id="loginForm" novalidate="">
+<div>
+<label class="block text-sm font-medium text-[var(--text-primary)]" for="email">Email or Username</label>
+<div class="mt-1">
+<input autocomplete="email" class="block w-full appearance-none rounded-lg border border-[var(--border-color)] px-3 py-2 placeholder-[var(--text-secondary)] shadow-sm focus:border-[var(--primary)] focus:outline-none focus:ring-[var(--primary)] sm:text-sm" id="email" name="email" required="" type="text"/>
+</div>
+<p class="mt-2 text-xs text-red-600 hidden" id="email-error">Please enter a valid email or username.</p>
+</div>
+<div>
+<div class="flex items-center justify-between">
+<label class="block text-sm font-medium text-[var(--text-primary)]" for="password">Password</label>
+<a class="text-sm font-medium text-[var(--primary)] hover:underline" href="#">Forgot Password?</a>
+</div>
+<div class="mt-1">
+<input autocomplete="current-password" class="block w-full appearance-none rounded-lg border border-[var(--border-color)] px-3 py-2 placeholder-[var(--text-secondary)] shadow-sm focus:border-[var(--primary)] focus:outline-none focus:ring-[var(--primary)] sm:text-sm" id="password" name="password" required="" type="password"/>
+</div>
+<p class="mt-2 text-xs text-red-600 hidden" id="password-error">Password cannot be empty.</p>
+</div>
+<div class="hidden rounded-md bg-red-50 p-4" id="form-error">
+<div class="flex">
+<div class="flex-shrink-0">
+<svg aria-hidden="true" class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<div class="ml-3">
+<p class="text-sm font-medium text-red-800">Invalid username or password. Please try again.</p>
+</div>
+</div>
+</div>
+<div>
+<button class="flex w-full justify-center rounded-lg bg-[var(--primary)] px-4 py-3 text-sm font-bold text-white shadow-sm transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-offset-2" type="submit">
+              Login
+            </button>
+</div>
+</form>
+<p class="mt-6 text-center text-sm text-[var(--text-secondary)]">
+          Don't have an account?
+          <a class="font-medium text-[var(--primary)] hover:underline" href="#">Register here</a>
+</p>
+</div>
+</div>
+</div>
+<script>
+    const form = document.getElementById('loginForm');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const emailError = document.getElementById('email-error');
+    const passwordError = document.getElementById('password-error');
+    const formError = document.getElementById('form-error');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      let isValid = true;
+      // Reset errors
+      emailError.classList.add('hidden');
+      emailInput.classList.remove('border-red-500');
+      passwordError.classList.add('hidden');
+      passwordInput.classList.remove('border-red-500');
+      formError.classList.add('hidden');
+      // Email validation
+      if (emailInput.value.trim() === '') {
+        emailError.textContent = 'Email or Username cannot be empty.';
+        emailError.classList.remove('hidden');
+        emailInput.classList.add('border-red-500');
+        isValid = false;
+      }
+      // Password validation
+      if (passwordInput.value.trim() === '') {
+        passwordError.classList.remove('hidden');
+        passwordInput.classList.add('border-red-500');
+        isValid = false;
+      }
+      // Form submission simulation
+      if (isValid) {
+          // Simulate a failed login attempt for demonstration
+          if(emailInput.value !== 'admin' || passwordInput.value !== 'password') {
+              formError.classList.remove('hidden');
+          } else {
+             // On successful login, you would redirect the user
+             console.log('Login successful');
+          }
+      }
+    });
+  </script>
+
+</body></html>

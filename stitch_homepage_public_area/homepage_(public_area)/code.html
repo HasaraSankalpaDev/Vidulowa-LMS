@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#13a4ec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101c22",
+            },
+            fontFamily: {
+              display: ["Manrope"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 w-full border-b border-gray-200/50 bg-background-light/80 backdrop-blur-sm dark:border-gray-700/50 dark:bg-background-dark/80">
+<div class="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-4">
+<svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+<h2 class="text-lg font-bold text-gray-900 dark:text-white">EduLanka</h2>
+</div>
+<nav class="hidden items-center gap-6 md:flex">
+<a class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">Home</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">Courses</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">Teachers</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">About</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="rounded-lg bg-primary px-4 py-2 text-sm font-bold text-white shadow-sm transition-transform hover:scale-105">
+<span class="truncate">Login / Register</span>
+</button>
+<button class="md:hidden">
+<span class="material-symbols-outlined"> menu </span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<section class="relative">
+<div class="absolute inset-0 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAmNRQW61bqzQX5PH9ZbdJk_drFKZvDiJe2Duu7jKsOwfHIBI6GKwDeBL4zvMKLifbjCVum-iqacfAkyChKoItFG-yaiG8ojrZy-aNOm6CzfIsYyDLJAxpSBU0nv7yeILtmylxh1ZwLysyc-VqYr9P9TMUgsYgg_9MoyggVKLltpGgPPyjJnCUW84y823YctxJt5LdeGIlxjrX_bUKMs4N8phGrjym3nXgWd1yrRVpMkWEFlHSfTynCWbV7rGzArhmlez2dx2Y4j4Km");'></div>
+<div class="absolute inset-0 bg-black/50"></div>
+<div class="relative mx-auto max-w-7xl px-4 py-32 text-center sm:px-6 lg:px-8">
+<h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">Empowering Minds, Shaping Futures</h1>
+<p class="mx-auto mt-6 max-w-xl text-lg text-gray-200">Your journey to academic excellence starts here. Explore our comprehensive courses designed to help you succeed.</p>
+<div class="mt-10 flex justify-center">
+<a class="rounded-lg bg-primary px-8 py-3 text-base font-bold text-white shadow-lg transition-transform hover:scale-105" href="#">Explore Courses</a>
+</div>
+</div>
+</section>
+<section class="py-16 sm:py-24 bg-white dark:bg-gray-900">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
+<div class="flex flex-col justify-center">
+<span class="text-sm font-semibold uppercase tracking-wider text-primary">About Us</span>
+<h2 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Your Partner in Sri Lankan Education</h2>
+<p class="mt-4 text-lg text-gray-600 dark:text-gray-400">At EduLanka, we are dedicated to revolutionizing the learning experience for students across Sri Lanka. Our mission is to provide accessible, high-quality education that empowers students to achieve their academic goals and unlock their full potential.</p>
+<p class="mt-4 text-lg text-gray-600 dark:text-gray-400">We believe in a future where every student has the tools and support they need to succeed, regardless of their location or background. Our platform combines innovative technology with expert instruction to create a dynamic and engaging learning environment.</p>
+</div>
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+<div class="rounded-xl bg-background-light p-6 shadow-sm dark:bg-background-dark">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<h3 class="mt-5 text-lg font-semibold text-gray-900 dark:text-white">Expert Tutors</h3>
+<p class="mt-2 text-base text-gray-600 dark:text-gray-400">Learn from the best educators in Sri Lanka, dedicated to your academic growth.</p>
+</div>
+<div class="rounded-xl bg-background-light p-6 shadow-sm dark:bg-background-dark">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-3xl">schedule</span>
+</div>
+<h3 class="mt-5 text-lg font-semibold text-gray-900 dark:text-white">Flexible Learning</h3>
+<p class="mt-2 text-base text-gray-600 dark:text-gray-400">Study anytime, anywhere, with our on-demand video lessons and live classes.</p>
+</div>
+<div class="rounded-xl bg-background-light p-6 shadow-sm dark:bg-background-dark">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-3xl">payments</span>
+</div>
+<h3 class="mt-5 text-lg font-semibold text-gray-900 dark:text-white">Affordable Plans</h3>
+<p class="mt-2 text-base text-gray-600 dark:text-gray-400">High-quality education that is accessible and budget-friendly for everyone.</p>
+</div>
+<div class="rounded-xl bg-background-light p-6 shadow-sm dark:bg-background-dark">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-3xl">trending_up</span>
+</div>
+<h3 class="mt-5 text-lg font-semibold text-gray-900 dark:text-white">Progress Tracking</h3>
+<p class="mt-2 text-base text-gray-600 dark:text-gray-400">Monitor your performance with detailed analytics and personalized feedback.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 sm:py-24">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<h2 class="mb-12 text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Course Categories</h2>
+<div class="grid grid-cols-2 gap-8 md:grid-cols-4">
+<div class="group flex flex-col items-center gap-4 text-center">
+<div class="h-40 w-40 overflow-hidden rounded-lg shadow-lg transition-transform group-hover:scale-105">
+<div class="h-full w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAC5PoVFKFyfMBec_hP1lEkvivaVzHq5P-NborguGJ0fn2F92XWtjamiWOO1SI9CX7vCjrbzbim24jkxZOZqye9WK4PsPoPVqgouthT4yJl_qLtZvPOf8fz2LYeQ6yua6rF0BwpKp4vHngG5rQ1aM5M_VGYddQrCL1q6uq112yy24Fhhdy7yEbO7byMfNCHLswvjBdqVKjwDoyVU2rjlIZkew0plBbK6Si3lIjuyncQsiW6NPbGHt8hK8nTq-hPwYvGbJdHI0ey4j8U");'></div>
+</div>
+<p class="text-lg font-medium">Mathematics</p>
+</div>
+<div class="group flex flex-col items-center gap-4 text-center">
+<div class="h-40 w-40 overflow-hidden rounded-lg shadow-lg transition-transform group-hover:scale-105">
+<div class="h-full w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAyukVU-nJ49Thm_20C9UaSLzK38z7CdEHhlJ6aNLTA0IpTK1YMgTxDEeM99Aopjn9BQnmsBnAlUlthcQ3Yb4rCJ7h8DVMpI-jAipNx4bfIN5mjQczw806I74nKtHVDX65Pz-YSFFpVE9wSzCQgc2ktBI2oPVfivkxxR4rFqQE2sI1iuD2VIsrs5kBqoAoJ00MtKCOJs_NvjthBVqNQb7ISXMbVwKbuDQT7LP4dvoNtuVzxuG9IYeomNNJnxCXGOR_yxXIaLxxyg95g");'></div>
+</div>
+<p class="text-lg font-medium">Science</p>
+</div>
+<div class="group flex flex-col items-center gap-4 text-center">
+<div class="h-40 w-40 overflow-hidden rounded-lg shadow-lg transition-transform group-hover:scale-105">
+<div class="h-full w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBBrxgrguNkSBMSWVrYd6H8eCeLdIbI-6RfVPTOzH3GgI7GWk5jBrh5dW-GPRfMwE9HfLrrHd8smDqW4_eJLbWT_pVOgZg9dUNgZjC4FBa8k1MfRuLlLqZ0PjwU2hpRKScIr2J8M0MgVm9JBKZH9GKHE9Jtsvn1056k0A68tQavoD5Di2PiNn6dripnXY91noPeRmLyrJLzyFg_zXL85TdVGwjy77RJU-fm9QPJO3ynTBZndGoK1ZrwtqAI6G1en0HjaVZKdYtNfzeU");'></div>
+</div>
+<p class="text-lg font-medium">IT &amp; Programming</p>
+</div>
+<div class="group flex flex-col items-center gap-4 text-center">
+<div class="h-40 w-40 overflow-hidden rounded-lg shadow-lg transition-transform group-hover:scale-105">
+<div class="h-full w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBMj3ve8St03a8FyP1Q3pSzjpQavkBXhg0LPyjBNKm2Grhe4nwaBRhM8B_6uvu7jXXckF3SAHC_i2kXkLsb-ulaGJyoez8QqcirM2cJ_nLSSmZHR80ZzXiBZ1g8Jg7ptZ2OPUq_xaAmm0oej9o7Zw9v4BFbHSLvFEcg5-C8zC7AK_o4j1b0HmqCwHvn7WJFqvPGvhrzNjiRg1DmNOoswLrYgZypXsunv662XOQpPByiOQhfYgcWEdld33w4YZDD28R58Wu2xMX7Pub5");'></div>
+</div>
+<p class="text-lg font-medium">Languages</p>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-background-light py-16 dark:bg-background-dark sm:py-24">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<h2 class="mb-12 text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Featured Courses</h2>
+<div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+<div class="overflow-hidden rounded-xl bg-white shadow-lg dark:bg-gray-800">
+<div class="h-40 w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBT5cJfZnNiiWdV_lAnxe5AWkhIYwCzzatdIqyYmYkyZ-YC9WqlncGiY0A7_VDny4uximQ7HIjGtoa_SaabdukFjwWkJ8tOxjMTgKGPitvaxkdMc_k3pRQSUaPouZWi7oEjIJjB05W5KMAYRcFSfvRLTiXnDHat0y1ViObY4pXwqxV4JLvcYJ8ZKNbGOo0VDXnV1v41Kb1PSV5TmdkGG8NBMz_S_wHNmjJjHWI8NGprEY5SpxF94f2IW251mh_IYANpHK4bWc7deiEk");'></div>
+<div class="p-6">
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white">Advanced Level Mathematics</h3>
+<p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Comprehensive A/L Math course covering all key topics.</p>
+<a class="mt-4 inline-block text-sm font-semibold text-primary hover:underline" href="#">View Details</a>
+</div>
+</div>
+<div class="overflow-hidden rounded-xl bg-white shadow-lg dark:bg-gray-800">
+<div class="h-40 w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCSXF_0oRW77SufGjem3Hn_WztAFRleLzG_n7eBMXA0ZKCu5UUVEcFOP7WgdqtQq2XJw6UVB9N-mHyvUewJA-IegBxWz_fptlSsHhCF20Tdw7CqfzIW4FXbb92FtTuww3scL_57qWZZaiUPfE3nNfVH5whNiaw20GaEmNo-eT5tekEdBkFexI1qftsYLM_ncqisnR3xRaxesf-MiXp4rGp2Ns2M_zlnvdd5xyQnYpoufpaOJY3eiidi5EhSgERRdnecvcWCv2ABp47Y");'></div>
+<div class="p-6">
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white">O Level Science</h3>
+<p class="mt-2 text-sm text-gray-600 dark:text-gray-400">O/L Science course with practical experiments and theory.</p>
+<a class="mt-4 inline-block text-sm font-semibold text-primary hover:underline" href="#">View Details</a>
+</div>
+</div>
+<div class="overflow-hidden rounded-xl bg-white shadow-lg dark:bg-gray-800">
+<div class="h-40 w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBln9qFHivguRBbpuAWohfrJfhcGuASYwXYxyaCgc9_2wzRzgq8okKbxuoX2DHfhd-WuQ17L0f_qWZ5WnwCu_OppFPEoEKv51awqO97u4njH78GWHZ-XMG_BDk9Z3JGMBPvFSYTIn12EndLJYDbGOkJMWDjnaEAaOfoW1BqroN8yk3AscdcZPY0xoCGyhQX9efCL1s18Rr61FETiI9gGfLWMOh5fapZcv5ujyVVs42rXbvDW0U-KMT1z8rv1mZDF_NV9Iej-7itrq5-");'></div>
+<div class="p-6">
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white">Introduction to Programming</h3>
+<p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Beginner-friendly programming course with hands-on projects.</p>
+<a class="mt-4 inline-block text-sm font-semibold text-primary hover:underline" href="#">View Details</a>
+</div>
+</div>
+<div class="overflow-hidden rounded-xl bg-white shadow-lg dark:bg-gray-800">
+<div class="h-40 w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAa2_Zo69YW3YuP-OHQbhC1WfgTfnf5atedghhFGG9zJgQZQ5YleTnoDsGPNYY4IC2--F11adWpKGVrO1lEolasHtBE_Y_-9840d8vd7kyq_uMNM7x5oA1YDQ06TfFFZn_0FfolgtGz9Sj6LNV1JXhs5zXd-LqAibIfaablhmGeeFhejMheEipBMfvjkvHYl3abjPYrqCEBRNqwzHgOzaZ7LZpVvMYOprKXbfijr7VjmLiqtFJgjqO6FvK4dAY_Atryz7OAR7ZesNmS");'></div>
+<div class="p-6">
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white">English for Professionals</h3>
+<p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Improve your English skills for professional success.</p>
+<a class="mt-4 inline-block text-sm font-semibold text-primary hover:underline" href="#">View Details</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-background-light py-16 dark:bg-background-dark sm:py-24">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<h2 class="mb-12 text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Our Top Teachers</h2>
+<div class="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+<div class="text-center">
+<div class="mx-auto h-32 w-32 overflow-hidden rounded-full shadow-lg">
+<div class="h-full w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZipvZZYk65PaRmIT-XVi9cy3YQ3zDD-9gvDd1kN5ne2lO3JvFhiUbHvdzs0LPWG3ySoChCxUTIXz8mC5SMQwdwxU53DS9T7z5D_uAwvBOq7M4N_1K2RTtmTOzWA_RhhPSgE0YOBe6NvNs1u3R54SV-skcKfuAZm3tPN9d_nXVK8R4HP45uTG8TKFsKLOFVpwSm4pBYZHl2jmckZ1w0U-EAxkZhVmyLsbv-0mGJI_a0cMiwr9yr0JkEcPk-8S8QuJkBl7ei_lVoQJR");'></div>
+</div>
+<h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">Ms. Nimali Perera</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">Mathematics Expert</p>
+</div>
+<div class="text-center">
+<div class="mx-auto h-32 w-32 overflow-hidden rounded-full shadow-lg">
+<div class="h-full w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCS2KEhw5SOc21yYCtm6DFpkgxbRHgi-LrnZfyOCVZ7N3z88Iev6YPGJw2LK2BH24v7zPsoIzj_M8c87S8XtzDPGPECB50VvS-316Wkl8liA8FATMRM7-3RkCno8NWiQ3KKP9dt93Zn0REKS3BSXYqwAsFZyUJgl9RulzGU4tXwKMSOnBFmMQHuJGxpJB_rtmYAIiyQiU6L0g2cUHcyh-4cSqptsMbLDKQZu0nSJ_ZtF9KxbO056w-lDX0B-ys0eJpYWgaCJ4-YSD_x");'></div>
+</div>
+<h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">Mr. Kamal Silva</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">Science Specialist</p>
+</div>
+<div class="text-center">
+<div class="mx-auto h-32 w-32 overflow-hidden rounded-full shadow-lg">
+<div class="h-full w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDallt5c52uOwMnsY_7IByxd6uP_4_jwdYyZDlL3txnQWedyxiCpg9VIjIimTw_DhQB72tw1gvSiyIpuJzzO6_5XA3vzZSKCuM_Qp9tkomz4AapwB-tGy90x3deLtVtpLdDXg9sAS_LBwM-zfs1y36uQDWMfmwaYfYhP9HMHr5RZSuwkl8Fus9i1PVcegdzLX-Yho02l84eRMDXtOgeq7ZdE3jCSNUidvUZkNX5Unq3gu3Kwg8c4dMpW2kWKAm-ouRHxD3zo3BbCNjq");'></div>
+</div>
+<h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">Ms. Deepani Fernando</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">IT &amp; Programming Instructor</p>
+</div>
+<div class="text-center">
+<div class="mx-auto h-32 w-32 overflow-hidden rounded-full shadow-lg">
+<div class="h-full w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAlVKsc7hrDvti-i-lmQVZUrec6sgV6KPHCr9PTVby9iIr1I6hVPePNx8VNbmKulUrsa_vaukm4Ng05DmAfCggTB9VozXqSHxmbJS5eo1bmckr_XXmSizqya_Qi_HhfSZXWKl1H2_h8Kr9FDHtwSzI1OZpRoE3lvQPXxwrlkrUWU05Y_vFpu8w2lzTX8c-zvwqnGFJ_p0o4yk26W52aZIv4BgE0t5mYXv2WehYyF_KPmZI4M1M7dlo82l2inMyrI5dqNuRGQIQQdFBr");'></div>
+</div>
+<h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">Mr. Rohan De Silva</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">Language Coach</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 sm:py-24">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<h2 class="mb-12 text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Student Testimonials</h2>
+<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+<div class="rounded-xl border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 overflow-hidden rounded-full">
+<div class="h-full w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD9FhsHK_y-Zh-5oktTdct_T5WSXJFWdXQPG1LFHIrv3NyzBdtU4us0nUepADpg2F6ZFgM0UCIUj4OA6hlJyMEglOcZvjjNPACDIs7ThIUYXmm6RPe7UOzfCoGI6IX-Ojt6o_CmrsOiSPSrmSbIoqIgrYrVkpMGzDOhN_Yot_B2nVUc07FUxGtplJhynzc-SVWGhNHgUlsnxbmU-QZAqkjKKzOr05d5Sm1SONfhSU_W0Lq9dylmalLo4J0zMkU7MRPVEZbmHcwMh46_");'></div>
+</div>
+<div>
+<p class="font-semibold text-gray-900 dark:text-white">Chamath Rajapaksa</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">2023-08-15</p>
+</div>
+</div>
+<div class="mt-4 flex items-center">
+<span class="material-symbols-outlined text-yellow-400">star</span>
+<span class="material-symbols-outlined text-yellow-400">star</span>
+<span class="material-symbols-outlined text-yellow-400">star</span>
+<span class="material-symbols-outlined text-yellow-400">star</span>
+<span class="material-symbols-outlined text-yellow-400">star</span>
+</div>
+<p class="mt-4 text-gray-600 dark:text-gray-300">"EduLanka helped me achieve top marks in my A/L exams. The tutors are excellent and the platform is easy to use."</p>
+</div>
+<div class="rounded-xl border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 overflow-hidden rounded-full">
+<div class="h-full w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDbgUhvSzfivozjogZbMjyLhj2t7_7eBCuLgVMiIAc0SWfkapMW2ypYgvTjN_WxTOEVuQZON83bQbt256IicDR_xNFfBivxfK6-GEC-_jwuvJ-9ZzlL4efBGCPjppw3aJQMvaHDki5zEhwMkOXXIZ2SSwfWNaGgRXId60qKwQY2OusLiLpKvckrVLuu9W9ZllQBvtSbpFuagUG9DUI7WKp9yt6arUoVpj7Te40dFGVUcayrHEbmyvxo3JRlkYT8Cuo27Vc4iOlyxh_Z");'></div>
+</div>
+<div>
+<p class="font-semibold text-gray-900 dark:text-white">Sandali Jayawardena</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">2023-09-22</p>
+</div>
+</div>
+<div class="mt-4 flex items-center">
+<span class="material-symbols-outlined text-yellow-400">star</span>
+<span class="material-symbols-outlined text-yellow-400">star</span>
+<span class="material-symbols-outlined text-yellow-400">star</span>
+<span class="material-symbols-outlined text-yellow-400">star</span>
+<span class="material-symbols-outlined text-gray-300 dark:text-gray-600">star</span>
+</div>
+<p class="mt-4 text-gray-600 dark:text-gray-300">"I improved my English significantly with the help of EduLanka's language courses. Highly recommended!"</p>
+</div>
+<div class="rounded-xl border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 overflow-hidden rounded-full">
+<div class="h-full w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCYZVamwgUHGRaDIAVuezImCXT02lDyoxRqSq61DFESjBPSp6j7Dgdg5lqmOMk-_KrlNxE8JcfYw4lPGCAOne3_zVPS598dOKe2kCh1oA-3_IOo9US_-WNRdiekBXaeJ2VWUJdHGg6lJY4l7Ez7lflOqd3I2rdRgC1diaalodSnwnNopHMUwQsiuAIy0KO8UHuN1HPxmqC7jKRbyufmB9CUIi4T_9WRtmJDWLLprjhiV2QRhdXEQUmgx_6bt1VHpbOx-nIJljqC7qrR");'></div>
+</div>
+<div>
+<p class="font-semibold text-gray-900 dark:text-white">Ravin Fernando</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">2023-10-10</p>
+</div>
+</div>
+<div class="mt-4 flex items-center">
+<span class="material-symbols-outlined text-yellow-400">star</span>
+<span class="material-symbols-outlined text-yellow-400">star</span>
+<span class="material-symbols-outlined text-yellow-400">star</span>
+<span class="material-symbols-outlined text-yellow-400">star</span>
+<span class="material-symbols-outlined text-yellow-400">star</span>
+</div>
+<p class="mt-4 text-gray-600 dark:text-gray-300">"The programming course was fantastic. I learned so much and now feel confident in my coding skills."</p>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-primary/10 py-16 dark:bg-primary/20 sm:py-24">
+<div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+<h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Ready to Take the Next Step?</h2>
+<p class="mx-auto mt-4 max-w-2xl text-lg text-gray-600 dark:text-gray-300">Join EduLanka today and unlock your full potential.</p>
+<div class="mt-10">
+<a class="rounded-lg bg-primary px-8 py-3 text-base font-bold text-white shadow-lg transition-transform hover:scale-105" href="#">Enroll Now</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-background-light dark:bg-background-dark">
+<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 gap-8 md:grid-cols-4">
+<div class="flex flex-col gap-4">
+<h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Company</h3>
+<a class="text-base text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">About</a>
+<a class="text-base text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">Teachers</a>
+<a class="text-base text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">Careers</a>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Courses</h3>
+<a class="text-base text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">Mathematics</a>
+<a class="text-base text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">Science</a>
+<a class="text-base text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">IT</a>
+<a class="text-base text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">Languages</a>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Support</h3>
+<a class="text-base text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">Contact</a>
+<a class="text-base text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">FAQs</a>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Legal</h3>
+<a class="text-base text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">Privacy Policy</a>
+<a class="text-base text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary" href="#">Terms of Service</a>
+</div>
+</div>
+<div class="mt-12 border-t border-gray-200 pt-8 dark:border-gray-700">
+<div class="flex items-center justify-between">
+<p class="text-base text-gray-500 dark:text-gray-400">© 2024 EduLanka. All rights reserved.</p>
+<div class="flex space-x-6">
+<a class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+<path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path>
+</svg>
+</a>
+<a class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+<path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+</svg>
+</a>
+<a class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+<path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.793 2.013 10.147 2 12.315 2zm-1.163 1.943c-1.045.048-1.696.21-2.227.412a2.913 2.913 0 00-1.063.663 2.913 2.913 0 00-.663 1.063c-.201.531-.363 1.182-.412 2.227-.048 1.009-.06 1.353-.06 3.688s.012 2.68.06 3.688c.049 1.045.21 1.696.412 2.227a2.913 2.913 0 00.663 1.063 2.913 2.913 0 001.063.663c.531.201 1.182.363 2.227.412 1.01.048 1.353.06 3.688.06s2.68-.012 3.688-.06c1.045-.049 1.696-.21 2.227-.412a2.913 2.913 0 001.063-.663 2.913 2.913 0 00.663-1.063c.201-.531.363-1.182.412-2.227.048-1.009.06-1.353.06-3.688s-.012-2.68-.06-3.688c-.049-1.045-.21-1.696-.412-2.227a2.913 2.913 0 00-.663-1.063 2.913 2.913 0 00-1.063-.663c-.531-.201-1.182-.363-2.227-.412-1.01-.048-1.353-.06-3.688-.06s-2.679.012-3.688.06zM12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zM12 14a2 2 0 110-4 2 2 0 010 4zm6-7.5a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z" fill-rule="evenodd"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>

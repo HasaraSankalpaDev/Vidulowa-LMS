@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Student Assignment Submission</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#13a4ec",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101c22",
+          },
+          fontFamily: {
+            "display": ["Manrope"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex min-h-screen">
+<aside class="w-64 bg-background-light dark:bg-background-dark p-6 hidden lg:flex flex-col justify-between border-r border-primary/20 dark:border-primary/30">
+<div>
+<div class="mb-8">
+<h1 class="text-2xl font-bold text-primary">EduLink</h1>
+<p class="text-sm text-black/60 dark:text-white/60">Student Portal</p>
+</div>
+<nav class="flex flex-col space-y-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-black/80 dark:text-white/80 hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-black/80 dark:text-white/80 hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined">book</span>
+<span>Courses</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 dark:bg-primary/30 text-primary font-bold" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span>Assignments</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-black/80 dark:text-white/80 hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span>Grades</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-black/80 dark:text-white/80 hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span>Messages</span>
+</a>
+</nav>
+</div>
+<div>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-black/80 dark:text-white/80 hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<main class="flex-1 p-6 lg:p-10">
+<div class="max-w-4xl mx-auto">
+<header class="mb-8">
+<h2 class="text-3xl font-bold text-black dark:text-white">Submit Assignment</h2>
+<p class="text-base text-black/60 dark:text-white/60">Course: Advanced Mathematics</p>
+</header>
+<div class="bg-white dark:bg-background-dark/50 rounded-xl shadow-sm p-8 mb-8 border border-black/10 dark:border-white/10">
+<h3 class="text-xl font-bold text-black dark:text-white mb-6">Assignment Details</h3>
+<div class="space-y-4">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2 py-4 border-b border-black/10 dark:border-white/10">
+<p class="font-semibold text-black/60 dark:text-white/60">Assignment Title</p>
+<p class="md:col-span-2 text-black dark:text-white">Calculus Problem Set 1</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2 py-4 border-b border-black/10 dark:border-white/10">
+<p class="font-semibold text-black/60 dark:text-white/60">Due Date</p>
+<p class="md:col-span-2 text-black dark:text-white">October 26, 2024</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2 pt-4">
+<p class="font-semibold text-black/60 dark:text-white/60">Instructions</p>
+<p class="md:col-span-2 text-black dark:text-white">Solve all problems and show your work. Upload your solutions as a single PDF file.</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark/50 rounded-xl shadow-sm p-8 border border-black/10 dark:border-white/10">
+<h3 class="text-xl font-bold text-black dark:text-white mb-6">Your Submission</h3>
+<div class="border-2 border-dashed border-primary/40 dark:border-primary/50 rounded-lg p-8 text-center mb-6">
+<span class="material-symbols-outlined text-5xl text-primary/60 dark:text-primary/70 mx-auto">cloud_upload</span>
+<p class="mt-4 text-lg font-semibold text-black dark:text-white">Drag &amp; drop files here</p>
+<p class="text-sm text-black/60 dark:text-white/60">or</p>
+<button class="mt-4 px-6 py-2 bg-primary/20 dark:bg-primary/30 text-primary font-bold rounded-lg hover:bg-primary/30 dark:hover:bg-primary/40 transition-colors">
+              Browse Files
+            </button>
+<p class="text-xs text-black/50 dark:text-white/50 mt-4">Supported file types: PDF. Maximum file size: 10MB.</p>
+</div>
+<div class="mb-8">
+<label class="block text-sm font-medium text-black/80 dark:text-white/80 mb-2" for="comments">Comments (Optional)</label>
+<textarea class="w-full p-3 bg-background-light dark:bg-background-dark border border-black/20 dark:border-white/20 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all text-black dark:text-white placeholder:text-black/50 dark:placeholder:text-white/50" id="comments" placeholder="Enter your comments or answers here..." rows="4"></textarea>
+</div>
+<div class="flex justify-end">
+<button class="bg-primary text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-opacity-90 transition-all transform hover:scale-105 flex items-center gap-2">
+<span class="material-symbols-outlined">check_circle</span>
+<span>Submit Assignment</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
