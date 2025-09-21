@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#13a4ec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101c22",
+            },
+            fontFamily: {
+              display: ["Manrope"],
+            },
+            borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+          },
+        },
+      };
+    </script>
+<style>
+      .form-input,
+      .form-textarea {
+        border-color: #e5e7eb;
+      }
+      .dark .form-input,
+      .dark .form-textarea {
+        border-color: #374151;
+      }
+      .form-input:focus,
+      .form-textarea:focus {
+        --tw-ring-color: #13a4ec;
+        border-color: #13a4ec;
+      }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#374151] dark:text-gray-300">
+<div class="flex min-h-screen flex-col">
+<header class="bg-white dark:bg-background-dark/50 backdrop-blur-sm sticky top-0 z-20 shadow-sm">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex h-16 items-center justify-between">
+<div class="flex items-center gap-4">
+<a class="flex items-center gap-2 text-xl font-bold text-gray-900 dark:text-white" href="#">
+<svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+</svg>
+<span>EduLink</span>
+</a>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Courses</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">About Us</a>
+<a class="font-medium text-primary text-sm" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<a class="hidden sm:block text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Login</a>
+<a class="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-all hover:bg-primary/90 active:scale-95" href="#">
+                Sign Up
+              </a>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<div class="py-16 sm:py-24">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
+<div class="flex flex-col">
+<div class="mb-8">
+<h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">Get in Touch</h1>
+<p class="mt-4 text-lg text-gray-600 dark:text-gray-400">We'd love to hear from you. Whether you have a question about our courses, need assistance, or just want to say hello, we're here to help.</p>
+</div>
+<div class="space-y-8">
+<div class="flex items-start gap-4">
+<div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/20 text-primary">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white">Phone</h3>
+<p class="text-gray-600 dark:text-gray-400">Reach us by phone for immediate assistance.</p>
+<a class="mt-1 block font-medium text-primary hover:underline" href="tel:+94771234567">+94 77 123 4567</a>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/20 text-primary">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white">Email</h3>
+<p class="text-gray-600 dark:text-gray-400">Send us an email with your queries.</p>
+<a class="mt-1 block font-medium text-primary hover:underline" href="mailto:support@edulink.lk">support@edulink.lk</a>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/20 text-primary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white">Address</h3>
+<p class="text-gray-600 dark:text-gray-400">Visit us at our tuition center.</p>
+<p class="mt-1 font-medium text-gray-900 dark:text-white">123 Main Street, Colombo, Sri Lanka</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/20 text-primary">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white">Business Hours</h3>
+<p class="text-gray-600 dark:text-gray-400">We are open during the following hours.</p>
+<p class="mt-1 font-medium text-gray-900 dark:text-white">Monday - Friday: 9 AM - 5 PM</p>
+</div>
+</div>
+</div>
+</div>
+<div class="rounded-xl bg-white dark:bg-background-dark/50 p-8 shadow-lg">
+<form action="#" class="space-y-6" method="POST">
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="name">Your Name</label>
+<div class="mt-1">
+<input autocomplete="name" class="form-input block w-full rounded-lg border-gray-300 bg-background-light dark:bg-background-dark dark:border-gray-600 py-3 px-4 shadow-sm focus:border-primary focus:ring-primary" id="name" name="name" placeholder="Enter your name" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="email">Your Email</label>
+<div class="mt-1">
+<input autocomplete="email" class="form-input block w-full rounded-lg border-gray-300 bg-background-light dark:bg-background-dark dark:border-gray-600 py-3 px-4 shadow-sm focus:border-primary focus:ring-primary" id="email" name="email" placeholder="Enter your email" type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="subject">Subject</label>
+<div class="mt-1">
+<input class="form-input block w-full rounded-lg border-gray-300 bg-background-light dark:bg-background-dark dark:border-gray-600 py-3 px-4 shadow-sm focus:border-primary focus:ring-primary" id="subject" name="subject" placeholder="Enter the subject" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="message">Message</label>
+<div class="mt-1">
+<textarea class="form-textarea block w-full rounded-lg border-gray-300 bg-background-light dark:bg-background-dark dark:border-gray-600 py-3 px-4 shadow-sm focus:border-primary focus:ring-primary" id="message" name="message" placeholder="Enter your message" rows="4"></textarea>
+</div>
+</div>
+<div>
+<button class="flex w-full justify-center rounded-lg bg-primary px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background-dark transition-all active:scale-95" type="submit">
+                      Send Message
+                    </button>
+</div>
+</form>
+</div>
+</div>
+<div class="mt-16 sm:mt-24">
+<h2 class="text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Find Us on the Map</h2>
+<div class="mt-8 aspect-[16/9] w-full rounded-xl overflow-hidden shadow-lg">
+<iframe allowfullscreen="" height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126743.58578651817!2d79.78913222883344!3d6.921922576974271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae253d10f7a7003%3A0x320b2e4d32d3838d!2sColombo!5e0!3m2!1sen!2slk!4v1709903960762!5m2!1sen!2slk" style="border:0;" width="100%"></iframe>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-white dark:bg-background-dark/50 border-t border-gray-200 dark:border-gray-800">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="flex flex-col items-center justify-between gap-6 md:flex-row">
+<p class="text-sm text-gray-500 dark:text-gray-400">© 2024 EduLink. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Privacy Policy</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>

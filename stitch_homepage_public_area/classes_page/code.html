@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<title>EduHub - Classes</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#13a4ec",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101c22",
+          },
+          fontFamily: {
+            "display": ["Manrope", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="flex flex-col min-h-screen">
+<header class="bg-background-light dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-20 border-b border-primary/20 dark:border-primary/30">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-8">
+<a class="flex items-center gap-2 text-xl font-bold text-gray-800 dark:text-white" href="#">
+<svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+<span>EduHub</span>
+</a>
+<nav class="hidden md:flex items-center space-x-6">
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium text-primary dark:text-primary" href="#">Classes</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Instructors</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Resources</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Support</a>
+</nav>
+</div>
+<div class="flex items-center space-x-4">
+<div class="hidden md:block relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500">search</span>
+<input class="w-48 lg:w-64 pl-10 pr-4 py-2 rounded-lg bg-white dark:bg-background-dark border border-primary/20 dark:border-primary/30 focus:ring-2 focus:ring-primary focus:outline-none text-sm text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500" placeholder="Search" type="text"/>
+</div>
+<button class="relative p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-10 w-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDO4YNLIcN4owT6WHtcyhkbdcmhN-s5x97RSkbujcrDZphzMtjmkMfRLAcj4bJ5UV7InGpVTBovaZZjRpFmKiYA5lFwwUXzeXyqADEoY60pQFeszVz_qd0HxQkpOxz_8tVZDFBRX3uqw9ownnNYaXL_VeM9By4-D0x-SY1lcMdFxaywHB61IHkq_1ZkypD7kahZLdlqMSiXGE1a14HlEv6RBL-MSGg2uUwOcp7hoTLlH_jV-oHt7L3GJreMvsrz5rgDwPGua8ywEdbJ");'></div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+<div class="max-w-5xl mx-auto">
+<div class="text-center mb-8 md:mb-12">
+<h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white leading-tight">Our Classes</h1>
+<p class="mt-4 text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">Explore our diverse range of classes designed to enhance your learning journey in Sri Lanka.</p>
+</div>
+<div class="mb-8 p-4 bg-white dark:bg-background-dark rounded-xl shadow-sm border border-primary/10 dark:border-primary/20">
+<div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
+<div class="md:col-span-2 relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500">search</span>
+<input class="w-full pl-12 pr-4 py-3 rounded-lg bg-background-light dark:bg-background-dark/50 border border-primary/20 dark:border-primary/30 focus:ring-2 focus:ring-primary focus:outline-none text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500" placeholder="Search for classes..." type="text"/>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 md:col-span-3 gap-2">
+<button class="flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-sm font-medium bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+<span>Subject</span>
+<span class="material-symbols-outlined text-base">expand_more</span>
+</button>
+<button class="flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-sm font-medium bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+<span>Teacher</span>
+<span class="material-symbols-outlined text-base">expand_more</span>
+</button>
+<button class="flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-sm font-medium bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+<span>Difficulty</span>
+<span class="material-symbols-outlined text-base">expand_more</span>
+</button>
+<button class="flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-sm font-medium bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+<span>Schedule</span>
+<span class="material-symbols-outlined text-base">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="bg-white dark:bg-background-dark p-4 rounded-xl shadow-md border border-primary/10 dark:border-primary/20 hover:shadow-lg hover:border-primary/20 dark:hover:border-primary/30 transition-all duration-300">
+<div class="flex flex-col md:flex-row items-center gap-6">
+<div class="w-full md:w-1/3 h-48 md:h-full rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAI7sviTvCAXpmY3dOlmuUC7gOpH0p1pBMZG26cc-KT7tI3KmOy7B_DdOksd_imW8dhegeVTpEAIgdc06TNsORSe4Hwc_-Zk6nfBlMQN8AmPuLJRy6FKRqKqDX9gr6e3L_AMRSVRcLkdqiufEW5_Zee3IpQxRRnkNujPAf17MClpgaRJk_jlrZHSUOLKcnZNO1fUQXa_wTPslDTZ23XpDNvE16gTLVHq4bROeROd9N0qnUUH9GBDN8hkbjXAdPpb_Dg1AB0SnJ9KDd1");'></div>
+<div class="flex-1">
+<span class="inline-block bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary text-xs font-bold px-3 py-1 rounded-full mb-2">Open for Enrollment</span>
+<h3 class="text-xl font-bold text-gray-800 dark:text-white">Advanced Mathematics for University Entrance</h3>
+<p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">Dive deep into calculus, algebra, and geometry with expert guidance. Taught by Dr. Nimal Perera.</p>
+</div>
+<div class="w-full md:w-auto flex flex-col items-stretch md:items-end gap-2">
+<button class="bg-primary text-white font-bold py-2 px-6 rounded-lg hover:opacity-90 transition-opacity w-full">Enroll Now</button>
+<button class="bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary font-medium py-2 px-6 rounded-lg hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors w-full">View Details</button>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark p-4 rounded-xl shadow-md border border-primary/10 dark:border-primary/20 hover:shadow-lg hover:border-primary/20 dark:hover:border-primary/30 transition-all duration-300">
+<div class="flex flex-col md:flex-row items-center gap-6">
+<div class="w-full md:w-1/3 h-48 md:h-full rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCha2WmR8dWbQSFlcOe5HdX-2U0cfpnzLEkx6XMMlSD0sWaC_ay28QEX3m3Yph-JdcRA7Odqo11Wu782ugrl7yr-PsRGxdROu5el8NINfCfyh5b5kcic3I1TjMBltUOGIZd6eqn1yl0E18XdJ6a8FpwwmUZJ1f6I_kJ_TlOQRzXReSakMFUT4gg5wG7_jmsb_TpB7MPw48rL8PDjh6ozbbrcdguA-AdcYe4ahMt-g3PP-WCHNHTSpgw5T0UrftQ6RxxCA4vJtMNqNAK");'></div>
+<div class="flex-1">
+<span class="inline-block bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-bold px-3 py-1 rounded-full mb-2">Full</span>
+<h3 class="text-xl font-bold text-gray-800 dark:text-white">Physics Fundamentals</h3>
+<p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">Master the core principles of mechanics, thermodynamics, and electromagnetism. Taught by Mrs. Anusha Silva.</p>
+</div>
+<div class="w-full md:w-auto flex flex-col items-stretch md:items-end gap-2">
+<button class="bg-gray-400 dark:bg-gray-600 text-white font-bold py-2 px-6 rounded-lg cursor-not-allowed w-full">Enroll Now</button>
+<button class="bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary font-medium py-2 px-6 rounded-lg hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors w-full">View Details</button>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark p-4 rounded-xl shadow-md border border-primary/10 dark:border-primary/20 hover:shadow-lg hover:border-primary/20 dark:hover:border-primary/30 transition-all duration-300">
+<div class="flex flex-col md:flex-row items-center gap-6">
+<div class="w-full md:w-1/3 h-48 md:h-full rounded-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC_pn4OjMvzjG_k_Fo210WtHxiB86MwejMk8cXzU8TPMvi7Z3dHkbLFLCezvKjDIMXYJV1GWJ4MfwE3Xc3LyVOjdtwhd04IQGqRvdjAvsE76nUH4Z0HpoLqi0Ep4s3fTe7A-FBzwv-t2664dhkyjQNb6GwTLMchORP3ALa_4Wn6U1CM58McHcUaSEqaCJuW07fVvRTewfEDZqkAl75uBrudHn36w3WnLcMQrY9CBwFaC8bsNte5TvUXuiNPUAqAu8Ld_rHBroW2UpmI");'></div>
+<div class="flex-1">
+<span class="inline-block bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary text-xs font-bold px-3 py-1 rounded-full mb-2">Open for Enrollment</span>
+<h3 class="text-xl font-bold text-gray-800 dark:text-white">Chemistry Essentials</h3>
+<p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">Explore chemical reactions, stoichiometry, and organic chemistry. Taught by Mr. Ravi Fernando.</p>
+</div>
+<div class="w-full md:w-auto flex flex-col items-stretch md:items-end gap-2">
+<button class="bg-primary text-white font-bold py-2 px-6 rounded-lg hover:opacity-90 transition-opacity w-full">Enroll Now</button>
+<button class="bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary font-medium py-2 px-6 rounded-lg hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors w-full">View Details</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 flex justify-center items-center space-x-2">
+<a class="flex items-center justify-center h-10 w-10 rounded-lg text-gray-500 dark:text-gray-400 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">chevron_left</span>
+</a>
+<a class="flex items-center justify-center h-10 w-10 rounded-lg font-bold bg-primary text-white text-sm" href="#">1</a>
+<a class="flex items-center justify-center h-10 w-10 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors" href="#">2</a>
+<a class="flex items-center justify-center h-10 w-10 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors" href="#">3</a>
+<span class="text-gray-500 dark:text-gray-400">...</span>
+<a class="flex items-center justify-center h-10 w-10 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors" href="#">8</a>
+<a class="flex items-center justify-center h-10 w-10 rounded-lg text-gray-500 dark:text-gray-400 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

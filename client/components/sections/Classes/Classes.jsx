@@ -23,8 +23,7 @@ const Classes = () => {
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            whileHover={{ scale: 1.03, y: -4 }}
-            className="bg-white cursor-pointer rounded-lg shadow-md flex flex-col overflow-hidden"
+            className="bg-white cursor-pointer rounded-lg shadow-md flex flex-col overflow-hidden hover:-translate-y-1 transition-transform duration-300"
           >
             <div className="h-40 w-full overflow-hidden flex items-center justify-center bg-gray-100">
               <img

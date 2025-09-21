@@ -3,9 +3,8 @@
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { FaRegUserCircle } from "react-icons/fa";
-
-// Add usePathname if using Next.js
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -17,9 +16,7 @@ const navLinks = [
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const pathname =
-    typeof window !== "undefined" ? window.location.pathname : "/";
-  // If using Next.js, use: const pathname = usePathname();
+  const pathname = usePathname(); // ✅ hydration-safe
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
@@ -49,7 +46,7 @@ const NavBar = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-2">
           {navLinks.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
               className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-150 ${
@@ -59,7 +56,7 @@ const NavBar = () => {
               }`}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -88,7 +85,7 @@ const NavBar = () => {
       {menuOpen && (
         <nav className="md:hidden px-4 pb-4 flex flex-col gap-2 bg-white/95 shadow-lg animate-fade-in-down">
           {navLinks.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
               className={`rounded-lg px-3 py-2 text-base font-medium transition-colors ${
@@ -99,7 +96,7 @@ const NavBar = () => {
               onClick={() => setMenuOpen(false)}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
           <button className="mt-2 flex items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2 text-sm font-semibold text-blue-600 shadow hover:bg-blue-50 transition-all cursor-pointer">
             <FaRegUserCircle className="text-lg" />

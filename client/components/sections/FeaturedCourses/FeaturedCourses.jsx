@@ -24,7 +24,7 @@ const FeaturedCourses = () => {
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="bg-white cursor-pointer rounded-lg shadow-md flex flex-col overflow-hidden hover:shadow-lg"
+            className="bg-white cursor-pointer rounded-lg shadow-md flex flex-col overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-transform duration-300"
           >
             <div className="h-40 w-full overflow-hidden">
               <img
