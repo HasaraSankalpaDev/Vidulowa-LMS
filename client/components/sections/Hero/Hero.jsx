@@ -2,7 +2,7 @@
 import React from "react";
 import { heroContent } from "@/data/SectionContent";
 import BtnFilled from "@/components/ui/BtnFilled";
-
+import { motion } from "framer-motion";
 const HeroSection = () => (
   <section className="relative min-h-[60vh] flex items-center justify-center">
     <div
@@ -13,7 +13,13 @@ const HeroSection = () => (
       aria-hidden="true"
     />
     <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
-    <div className="relative mx-auto max-w-7xl px-4 py-24 sm:py-32 text-center sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.3 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="relative mx-auto max-w-7xl px-4 py-24 sm:py-32 text-center sm:px-6 lg:px-8"
+    >
       <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white drop-shadow-lg">
         {heroContent.title}
       </h1>
@@ -23,7 +29,7 @@ const HeroSection = () => (
       <div className="mt-10 flex justify-center">
         <BtnFilled href={"/classes"} content={heroContent.buttonText} />
       </div>
-    </div>
+    </motion.div>
   </section>
 );
 

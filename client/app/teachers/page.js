@@ -3,6 +3,7 @@ import Footer from "@/components/layout/Footer/Footer";
 import NavBar from "@/components/layout/NavBar/NavBar";
 import { teachers } from "@/data/TeachersData";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const page = () => {
   const subjects = [
@@ -25,19 +26,31 @@ const page = () => {
   return (
     <div>
       <NavBar />
-      <main className="bg-gray-50  py-18 px-2 sm:px-6 lg:px-8">
+      <main className="bg-gray-50 py-18 px-2 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-4">
-            Our Expert Instructors
-          </h1>
-          <p className="text-gray-500 text-center mb-10 max-w-2xl mx-auto">
-            Meet the dedicated team of educators at EduLink, committed to your
-            academic success.
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: -40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-10"
+          >
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+              Our Expert Instructors
+            </h1>
+            <p className="text-gray-500 max-w-2xl mx-auto">
+              Meet the dedicated team of educators at EduLink, committed to your
+              academic success.
+            </p>
+          </motion.div>
 
           {/* Search Bar */}
-          <div className="flex justify-center mb-6">
+          <motion.div
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex justify-center mb-6"
+          >
             <input
               type="text"
               placeholder="Search by subject or teacher name"
@@ -45,10 +58,15 @@ const page = () => {
               onChange={(e) => setSearch(e.target.value)}
               className="w-full max-w-2xl rounded-lg bg-gray-50 px-4 py-3 text-gray-700 outline-none border border-blue-100 shadow-sm focus:border-blue-400 transition"
             />
-          </div>
+          </motion.div>
 
           {/* Subject Filter */}
-          <div className="flex flex-wrap justify-center gap-2 mb-15">
+          <motion.div
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-wrap justify-center gap-2 mb-15"
+          >
             {subjects.map((subject) => (
               <button
                 key={subject}
@@ -62,12 +80,21 @@ const page = () => {
                 {subject}
               </button>
             ))}
-          </div>
+          </motion.div>
 
           {/* Teachers Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 justify-items-center">
-            {filteredTeachers.map((teacher) => (
-              <div key={teacher.name} className="flex flex-col items-center">
+            {filteredTeachers.map((teacher, index) => (
+              <motion.div
+                key={teacher.name}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.1, // stagger effect
+                }}
+                className="flex flex-col items-center"
+              >
                 <div className="w-28 h-28 rounded-full overflow-hidden bg-gray-200 mb-3 shadow">
                   <img
                     src={teacher.img}
@@ -82,7 +109,7 @@ const page = () => {
                 <div className="text-gray-500 text-sm text-center">
                   {teacher.subject}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

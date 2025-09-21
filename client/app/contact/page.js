@@ -11,6 +11,7 @@ import NavBar from "@/components/layout/NavBar/NavBar";
 import Footer from "@/components/layout/Footer/Footer";
 import Form from "@/components/ui/Form";
 import { contactSchema } from "@/schemas/contactSchema";
+import { motion } from "framer-motion"; // <-- Import Framer Motion
 
 export default function page() {
   const fields = [
@@ -47,10 +48,26 @@ export default function page() {
     location: AiOutlineEnvironment,
     schedule: AiOutlineClockCircle,
   };
+
+  // Animation settings
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   return (
     <div>
       <NavBar />
-      <div className="min-h-screen flex flex-col text-gray-800">
+      <motion.div
+        className="min-h-screen flex flex-col text-gray-800"
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUp} // Apply the one-time animation
+      >
         <main className="flex-grow py-16 sm:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Info */}
@@ -90,7 +107,7 @@ export default function page() {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-white  px-8 pt-8 pb-8  rounded-xl shadow-lg">
+            <div className="bg-white px-8 pt-8 pb-8 rounded-xl shadow-lg">
               <Form
                 fields={fields}
                 buttonText="Send Message"
@@ -113,7 +130,7 @@ export default function page() {
             </div>
           </div>
         </main>
-      </div>
+      </motion.div>
       <Footer />
     </div>
   );
