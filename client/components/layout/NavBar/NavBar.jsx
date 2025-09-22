@@ -62,10 +62,13 @@ const NavBar = () => {
 
         {/* Actions */}
         <div className="flex items-center gap-2">
-          <button className="hidden md:flex cursor-pointer items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2 text-sm font-semibold text-blue-600 shadow hover:bg-blue-50 transition-all">
+          <Link
+            href={"/login"}
+            className="hidden md:flex cursor-pointer items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2 text-sm font-semibold text-blue-600 shadow hover:bg-blue-50 transition-all"
+          >
             <FaRegUserCircle className="text-lg" />
             Login / Register
-          </button>
+          </Link>
           {/* Mobile Menu Button */}
           <button
             className="md:hidden cursor-pointer flex items-center justify-center rounded-full p-2 hover:bg-blue-50 transition"
