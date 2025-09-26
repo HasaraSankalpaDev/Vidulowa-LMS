@@ -127,7 +127,7 @@ const RegisterPage = () => {
     },
   ];
 
-  // Common extra field
+  //  extra field
   const phoneField = {
     name: "phone",
     label: "Phone Number",
@@ -135,13 +135,12 @@ const RegisterPage = () => {
     placeholder: "Enter your phone number",
   };
 
-  // Build fields dynamically based on role
   const fields = useMemo(() => {
     if (role === "student")
       return [...baseFields, ...studentFields, phoneField];
     if (role === "teacher")
       return [...baseFields, ...teacherFields, phoneField];
-    return [...baseFields, phoneField]; // admin or other roles
+    return [...baseFields, phoneField];
   }, [role]);
 
   const handleRegister = (data) => {
@@ -149,7 +148,6 @@ const RegisterPage = () => {
     alert("Registration Success!");
   };
 
-  // Handle role change from the form
   const handleFieldChange = (name, value) => {
     if (name === "role") {
       setRole(value);
@@ -168,7 +166,7 @@ const RegisterPage = () => {
 
           <Form
             fields={fields}
-            buttonText="Register"
+            buttonText="Register Now"
             onSubmit={handleRegister}
             onChange={handleFieldChange}
             validationSchema={registerSchema}
