@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Teacher Dashboard - Class Management</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#4338CA", // A nice indigo for primary actions
+            "background-light": "#F9FAFB", // A very light gray for the background
+            "background-dark": "#111827", // A dark gray for dark mode background
+            "surface-light": "#FFFFFF",
+            "surface-dark": "#1F2937",
+            "text-light": "#1F2937",
+            "text-dark": "#F9FAFB",
+            "subtle-light": "#6B7280",
+            "subtle-dark": "#9CA3AF",
+            "border-light": "#E5E7EB",
+            "border-dark": "#374151"
+          },
+          fontFamily: {
+            display: ["'Inter'", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+          },
+        },
+      },
+    };
+  </script>
+<style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex h-screen">
+<aside class="w-64 flex-shrink-0 bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark flex flex-col justify-between p-4">
+<div>
+<div class="flex items-center gap-3 mb-8">
+<img alt="Teacher profile picture" class="w-10 h-10 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgsPTFEulJYfltv6-M1NHFYqKoMjnbDVkzUa64mqlOA2NJhAQlAoVvEunBv4Os5Z-XADbZgoLQioC75tBy7Z8wMjMQ1Q-8dxcSJ4Bz523EGQHxVvHmcxW-aykfYokiP20VWXYe2Wa5d3PM2V9WStKi1gJbv29g8DEzTEmDX5q3a1V6DeOgFqLw7qjn6Pli0NxsbZFl4BCh-JUd_LhYPa8cL9EUF-f0Qc7H6ijwk-kAQ3m64EwNUd0JnVcZ17sQ7yC1T0SvH2YlULSJ"/>
+<div>
+<h3 class="font-semibold text-text-light dark:text-text-dark">W.K.Sumanapala</h3>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">Teacher</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-2 rounded text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" href="#">
+<span class="material-icons-outlined text-subtle-light dark:text-subtle-dark">dashboard</span>
+            Dashboard
+          </a>
+<a class="flex items-center gap-3 px-4 py-2 rounded bg-primary/10 text-primary font-semibold" href="#">
+<span class="material-icons-outlined">class</span>
+            Class Management
+          </a>
+<a class="flex items-center gap-3 px-4 py-2 rounded text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" href="#">
+<span class="material-icons-outlined text-subtle-light dark:text-subtle-dark">group</span>
+            Student Management
+          </a>
+<a class="flex items-center gap-3 px-4 py-2 rounded text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" href="#">
+<span class="material-icons-outlined text-subtle-light dark:text-subtle-dark">assignment</span>
+            Assignments &amp; Exams
+          </a>
+<a class="flex items-center gap-3 px-4 py-2 rounded text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" href="#">
+<span class="material-icons-outlined text-subtle-light dark:text-subtle-dark">schedule</span>
+            Schedule Management
+          </a>
+<a class="flex items-center gap-3 px-4 py-2 rounded text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" href="#">
+<span class="material-icons-outlined text-subtle-light dark:text-subtle-dark">bar_chart</span>
+            Reports &amp; Analytics
+          </a>
+<a class="flex items-center gap-3 px-4 py-2 rounded text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" href="#">
+<span class="material-icons-outlined text-subtle-light dark:text-subtle-dark">person_outline</span>
+            Profile &amp; Settings
+          </a>
+</nav>
+</div>
+<div class="border-t border-border-light dark:border-border-dark pt-4">
+<a class="flex items-center gap-3 px-4 py-2 rounded text-red-600 dark:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors" href="#">
+<span class="material-icons-outlined">logout</span>
+            Log Out
+          </a>
+<div class="flex items-center justify-between mt-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-gray-700 dark:bg-gray-200 flex items-center justify-center text-white dark:text-black font-bold text-lg">
+                    N
+                </div>
+</div>
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700">
+<span class="material-icons-outlined text-subtle-light dark:text-subtle-dark text-xl">chevron_left</span>
+</button>
+</div>
+</div>
+</aside>
+<main class="flex-1 p-8 overflow-y-auto">
+<div class="flex items-center gap-2 text-sm text-subtle-light dark:text-subtle-dark mb-6">
+<a class="hover:text-primary" href="#">Home</a>
+<span>/</span>
+<a class="hover:text-primary" href="#">Teacher</a>
+<span>/</span>
+<span class="font-medium text-text-light dark:text-text-dark">Class Management</span>
+</div>
+<h1 class="text-3xl font-bold text-text-light dark:text-text-dark mb-8">Class Management</h1>
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow-sm border border-border-light dark:border-border-dark">
+<h2 class="text-xl font-semibold text-text-light dark:text-text-dark mb-4">Your Classes</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="border border-border-light dark:border-border-dark rounded-lg p-4 flex flex-col justify-between hover:shadow-lg transition-shadow">
+<div>
+<h3 class="font-semibold text-lg text-text-light dark:text-text-dark">Grade 10 - Mathematics</h3>
+<p class="text-sm text-subtle-light dark:text-subtle-dark mt-1">2024 Academic Year</p>
+<div class="flex items-center gap-4 mt-4 text-sm text-subtle-light dark:text-subtle-dark">
+<div class="flex items-center gap-1.5">
+<span class="material-icons-outlined text-base">group</span>
+<span>35 Students</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-icons-outlined text-base">schedule</span>
+<span>Mon, Wed, Fri</span>
+</div>
+</div>
+</div>
+<div class="mt-6 flex justify-end">
+<button class="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors">View Details</button>
+</div>
+</div>
+<div class="border border-border-light dark:border-border-dark rounded-lg p-4 flex flex-col justify-between hover:shadow-lg transition-shadow">
+<div>
+<h3 class="font-semibold text-lg text-text-light dark:text-text-dark">Grade 11 - Physics</h3>
+<p class="text-sm text-subtle-light dark:text-subtle-dark mt-1">2024 Academic Year</p>
+<div class="flex items-center gap-4 mt-4 text-sm text-subtle-light dark:text-subtle-dark">
+<div class="flex items-center gap-1.5">
+<span class="material-icons-outlined text-base">group</span>
+<span>28 Students</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-icons-outlined text-base">schedule</span>
+<span>Tue, Thu</span>
+</div>
+</div>
+</div>
+<div class="mt-6 flex justify-end">
+<button class="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors">View Details</button>
+</div>
+</div>
+<div class="border-2 border-dashed border-border-light dark:border-border-dark rounded-lg p-4 flex flex-col items-center justify-center text-center hover:border-primary dark:hover:border-primary transition-colors cursor-pointer">
+<div class="bg-gray-100 dark:bg-gray-700 p-3 rounded-full mb-3">
+<span class="material-icons-outlined text-primary text-2xl">add</span>
+</div>
+<h3 class="font-semibold text-text-light dark:text-text-dark">Create New Class</h3>
+<p class="text-sm text-subtle-light dark:text-subtle-dark mt-1">Set up a new class for your students.</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

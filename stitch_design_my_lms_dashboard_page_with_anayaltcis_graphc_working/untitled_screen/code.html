@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LMS Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#4F46E5",
+              "background-light": "#F8F9FA",
+              "background-dark": "#121212",
+              "card-light": "#FFFFFF",
+              "card-dark": "#1E1E1E",
+              "text-light": "#1F2937",
+              "text-dark": "#E5E7EB",
+              "muted-light": "#6B7280",
+              "muted-dark": "#9CA3AF"
+            },
+            fontFamily: {
+              display: ["Poppins", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+            },
+          },
+        },
+      };
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="flex h-screen">
+<aside class="w-64 bg-card-light dark:bg-card-dark flex flex-col border-r border-gray-200 dark:border-gray-700">
+<div class="p-4 flex flex-col items-center border-b border-gray-200 dark:border-gray-700">
+<img alt="Profile of W.K Sumanapala" class="w-16 h-16 rounded-full mb-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeCDwRfg-5YuUBEC-Isi_d7eByddmf0jltsYrbZQhIBC-isMBS3MDX--Ae8Yf4ZkRn2p3pDmO8_68a0IsAKc-taJCU3IojEEZ5lmnpFB6UUmUdvG9MCQ3wc_lSJj1aRwEHt5T7pZsff7POBQQ9Xirh41ayNSPYFz1B5AzF6CSayf7PFVyCM1fo1tEH-i0t9gdZu_7b4atTRD7E5gm7A_XOyOby-Z26oYMUolOXr30dBH7XhOjBJDfH2Hpp82l-D5szo9qwXbXpHro"/>
+<h3 class="font-semibold text-lg text-text-light dark:text-text-dark">W.K Sumanapala</h3>
+<p class="text-sm text-muted-light dark:text-muted-dark">Teacher</p>
+</div>
+<nav class="flex-1 px-4 py-6 space-y-2">
+<a class="flex items-center px-4 py-2.5 bg-primary/10 text-primary rounded-lg font-semibold" href="#">
+<span class="material-icons mr-3">dashboard</span>
+                    Dashboard
+                </a>
+<a class="flex items-center px-4 py-2.5 text-muted-light dark:text-muted-dark hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg" href="#">
+<span class="material-icons mr-3">class</span>
+                    Class Management
+                </a>
+<a class="flex items-center px-4 py-2.5 text-muted-light dark:text-muted-dark hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg" href="#">
+<span class="material-icons mr-3">people_alt</span>
+                    Student Management
+                </a>
+<a class="flex items-center px-4 py-2.5 text-muted-light dark:text-muted-dark hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg" href="#">
+<span class="material-icons mr-3">assignment</span>
+                    Assignments &amp; Exams
+                </a>
+<a class="flex items-center px-4 py-2.5 text-muted-light dark:text-muted-dark hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg" href="#">
+<span class="material-icons mr-3">schedule</span>
+                    Schedule Management
+                </a>
+<a class="flex items-center px-4 py-2.5 text-muted-light dark:text-muted-dark hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg" href="#">
+<span class="material-icons mr-3">analytics</span>
+                    Reports &amp; Analytics
+                </a>
+<a class="flex items-center px-4 py-2.5 text-muted-light dark:text-muted-dark hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg" href="#">
+<span class="material-icons mr-3">settings</span>
+                    Profile &amp; Settings
+                </a>
+</nav>
+</aside>
+<main class="flex-1 p-6 lg:p-8 overflow-y-auto">
+<div class="flex justify-between items-center mb-6">
+<nav aria-label="Breadcrumb" class="flex">
+<ol class="inline-flex items-center space-x-1 md:space-x-3">
+<li class="inline-flex items-center">
+<a class="inline-flex items-center text-sm font-medium text-muted-light hover:text-primary dark:text-muted-dark dark:hover:text-white" href="#">
+                        Home
+                      </a>
+</li>
+<li>
+<div class="flex items-center">
+<span class="material-icons text-muted-light dark:text-muted-dark">chevron_right</span>
+<a class="ml-1 text-sm font-medium text-muted-light hover:text-primary md:ml-2 dark:text-muted-dark dark:hover:text-white" href="#">Teacher</a>
+</div>
+</li>
+<li aria-current="page">
+<div class="flex items-center">
+<span class="material-icons text-muted-light dark:text-muted-dark">chevron_right</span>
+<span class="ml-1 text-sm font-medium text-text-light md:ml-2 dark:text-text-dark">Dashboard</span>
+</div>
+</li>
+</ol>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700">
+<span class="material-icons text-muted-light dark:text-muted-dark">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700">
+<span class="material-icons text-muted-light dark:text-muted-dark">dark_mode</span>
+</button>
+</div>
+</div>
+<h1 class="text-3xl font-bold mb-6 text-text-light dark:text-text-dark">Dashboard</h1>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+<div class="bg-card-light dark:bg-card-dark p-6 rounded-lg shadow-sm flex items-center">
+<div class="p-3 bg-primary/10 rounded-full mr-4">
+<span class="material-icons text-primary text-3xl">school</span>
+</div>
+<div>
+<p class="text-sm text-muted-light dark:text-muted-dark">Total Students</p>
+<p class="text-2xl font-bold text-text-light dark:text-text-dark">1,250</p>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark p-6 rounded-lg shadow-sm flex items-center">
+<div class="p-3 bg-green-500/10 rounded-full mr-4">
+<span class="material-icons text-green-500 text-3xl">menu_book</span>
+</div>
+<div>
+<p class="text-sm text-muted-light dark:text-muted-dark">Active Courses</p>
+<p class="text-2xl font-bold text-text-light dark:text-text-dark">8</p>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark p-6 rounded-lg shadow-sm flex items-center">
+<div class="p-3 bg-yellow-500/10 rounded-full mr-4">
+<span class="material-icons text-yellow-500 text-3xl">assignment_turned_in</span>
+</div>
+<div>
+<p class="text-sm text-muted-light dark:text-muted-dark">Completed Lessons</p>
+<p class="text-2xl font-bold text-text-light dark:text-text-dark">240</p>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark p-6 rounded-lg shadow-sm flex items-center">
+<div class="p-3 bg-red-500/10 rounded-full mr-4">
+<span class="material-icons text-red-500 text-3xl">pending_actions</span>
+</div>
+<div>
+<p class="text-sm text-muted-light dark:text-muted-dark">Pending Assignments</p>
+<p class="text-2xl font-bold text-text-light dark:text-text-dark">12</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2 bg-card-light dark:bg-card-dark p-6 rounded-lg shadow-sm">
+<h2 class="text-xl font-semibold mb-4 text-text-light dark:text-text-dark">Student Progress</h2>
+<div class="h-80">
+<canvas id="studentProgressChart"></canvas>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark p-6 rounded-lg shadow-sm">
+<h2 class="text-xl font-semibold mb-4 text-text-light dark:text-text-dark">Course Completion</h2>
+<div class="h-80 flex items-center justify-center">
+<canvas id="courseCompletionChart"></canvas>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script>
+        // Student Progress Chart
+        const studentProgressCtx = document.getElementById('studentProgressChart').getContext('2d');
+        new Chart(studentProgressCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Overall Progress',
+                    data: [10, 20, 35, 40, 55, 60, 65, 75, 80, 85, 90, 95],
+                    borderColor: '#4F46E5',
+                    backgroundColor: 'rgba(79, 70, 229, 0.1)',
+                    tension: 0.4,
+                    fill: true,
+                }, {
+                    label: 'Avg. Class Score',
+                    data: [65, 68, 72, 70, 75, 78, 80, 82, 85, 84, 88, 90],
+                    borderColor: '#10B981',
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    tension: 0.4,
+                    fill: true,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                         grid: {
+                            color: document.documentElement.classList.contains('dark') ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'
+                        },
+                        ticks: {
+                            color: document.documentElement.classList.contains('dark') ? '#E5E7EB' : '#1F2937'
+                        }
+                    },
+                    x: {
+                         grid: {
+                            display: false
+                        },
+                        ticks: {
+                           color: document.documentElement.classList.contains('dark') ? '#E5E7EB' : '#1F2937'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: document.documentElement.classList.contains('dark') ? '#E5E7EB' : '#1F2937'
+                        }
+                    }
+                }
+            }
+        });
+        // Course Completion Chart
+        const courseCompletionCtx = document.getElementById('courseCompletionChart').getContext('2d');
+        new Chart(courseCompletionCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Completed', 'In Progress', 'Not Started'],
+                datasets: [{
+                    label: 'Courses',
+                    data: [65, 25, 10],
+                    backgroundColor: [
+                        '#4F46E5',
+                        '#F59E0B',
+                        '#EF4444'
+                    ],
+                    borderColor: document.documentElement.classList.contains('dark') ? '#1E1E1E' : '#FFFFFF',
+                    borderWidth: 4,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                 plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: document.documentElement.classList.contains('dark') ? '#E5E7EB' : '#1F2937',
+                            padding: 20
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body></html>
