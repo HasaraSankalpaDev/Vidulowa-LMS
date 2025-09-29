@@ -220,3 +220,77 @@ export const classesData = [
     teacher: "Mrs. Anusha",
   },
 ];
+// Add payment method images here
+export const classesDataFull = [
+  {
+    id: 1,
+    status: "Open for Enrollment",
+    statusColor: "bg-green-100 text-green-700",
+    title: "Advanced Mathematics for University Entrance",
+    desc: `This class is specially designed for Sri Lankan A/L students preparing 
+    for the Mathematics stream. It covers Pure Mathematics, Applied Mathematics, 
+    and Statistics with real exam-focused strategies.`,
+    enroll: true,
+    grade: "12",
+    subject: "Mathematics",
+    teacher: "Dr. Nimal Perera",
+    teacherBio: `PhD in Applied Mathematics (University of Colombo). Over 15 years 
+    of teaching A/L classes across Sri Lanka with a strong track record of producing 
+    island rankers.`,
+    teacherImage: "https://randomuser.me/api/portraits/men/32.jpg",
+    classImage:
+      "https://images.pexels.com/photos/4145195/pexels-photo-4145195.jpeg",
+    studentsCount: 230,
+    schedule: "Every Saturday & Sunday | 8:30 AM - 12:30 PM",
+    location: "Colombo - Online & Physical Class",
+    fee: "LKR 3,500 per month",
+    paymentMethods: [
+      {
+        name: "LankaPay",
+        image:
+          "data:image/png;base64,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",
+      },
+      {
+        name: "PayPal",
+        image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUWBxZ-pUmXcKHzLIIy2_IY2Ko8zUWDWgQwBUzp3vhWwAgJa4agSi8lhfxZY_R6sMTid0&usqp=CAU",
+      },
+    ],
+    classType: "Physical + Online + Video Lessons",
+    sampleVideo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+  },
+  {
+    id: 2,
+    status: "Limited Seats",
+    statusColor: "bg-yellow-100 text-yellow-700",
+    title: "Biology Masterclass for A/L Students",
+    desc: `A comprehensive biology class covering all major topics for A/L. Includes 
+    diagrams, past paper questions, and interactive quizzes.`,
+    enroll: true,
+    grade: "12",
+    subject: "Biology",
+    teacher: "Ms. Anushka Fernando",
+    teacherBio: `MSc in Molecular Biology. 10+ years of experience teaching A/L Biology with top student results.`,
+    teacherImage: "https://randomuser.me/api/portraits/women/44.jpg",
+    classImage:
+      "https://images.pexels.com/photos/40751/pexels-photo-40751.jpeg",
+    studentsCount: 180,
+    schedule: "Mon, Wed, Fri | 4:00 PM - 6:00 PM",
+    location: "Kandy - Online",
+    fee: "LKR 3,000 per month",
+    paymentMethods: [
+      {
+        name: "LankaPay",
+        image:
+          "data:image/png;base64,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",
+      },
+      {
+        name: "PayPal",
+        image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUWBxZ-pUmXcKHzLIIy2_IY2Ko8zUWDWgQwBUzp3vhWwAgJa4agSi8lhfxZY_R6sMTid0&usqp=CAU",
+      },
+    ],
+    classType: "Online Only",
+    sampleVideo: "https://www.youtube.com/embed/ysz5S6PUM-U",
+  },
+];

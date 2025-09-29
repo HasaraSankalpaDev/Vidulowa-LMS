@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Teacher Details</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3B82F6",
+              "background-light": "#F9FAFB",
+              "background-dark": "#111827",
+              "card-light": "#FFFFFF",
+              "card-dark": "#1F2937",
+              "text-light": "#1F2937",
+              "text-dark": "#F9FAFB",
+              "text-secondary-light": "#6B7280",
+              "text-secondary-dark": "#9CA3AF",
+            },
+            fontFamily: {
+              display: ["Poppins", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+            },
+          },
+        },
+      };
+    </script>
+<style>
+      .material-icons {
+        vertical-align: middle;
+      }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<header class="flex justify-between items-center py-6">
+<div class="flex items-center space-x-2">
+<span class="material-icons text-primary text-3xl">school</span>
+<span class="text-2xl font-bold">ViduLowa</span>
+</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-text-light dark:text-text-dark hover:text-primary" href="#">Home</a>
+<a class="text-text-light dark:text-text-dark hover:text-primary" href="#">Classes</a>
+<a class="text-primary font-semibold" href="#">Teachers</a>
+<a class="text-text-light dark:text-text-dark hover:text-primary" href="#">About</a>
+<a class="text-text-light dark:text-text-dark hover:text-primary" href="#">Contact</a>
+</nav>
+<div class="flex items-center space-x-2">
+<a class="flex items-center text-primary border border-primary rounded-lg px-4 py-2 text-sm font-medium" href="#">
+<span class="material-icons mr-2">login</span>
+                    Login / Register
+                </a>
+</div>
+</header>
+<main class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
+<div class="lg:col-span-2 space-y-8">
+<div class="bg-card-light dark:bg-card-dark p-6 rounded-lg shadow-md">
+<div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+<img alt="Teacher profile picture" class="w-32 h-32 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjjvZ_fHM-5ZMeILb2txzYd6RYAZepND0AkQX5Ws4O3-UzcEYVeMWgd9uCEPsksywNR4KP-EqXupGHC_VkoENk0NvlIV7pwhhqrbSgsrweTNfslWCad607GAw2tnaqozMVKO2_10x9kXpuLZggeJPBX28RgGlYlF-O3suVu4Yyiil3d89WlL7L8QO2t3rvtGiiMNDcEAisQmFnoiJl-uBYgoI5966r-5ZE2XtjQX1arWhtg-pOGiUZrTm_2PaymmsWqE7mt51lYjs"/>
+<div class="text-center sm:text-left">
+<h1 class="text-3xl font-bold">Anushka Silva</h1>
+<p class="text-text-secondary-light dark:text-text-secondary-dark mt-1">B.Sc. in Mathematics, M.Sc. in Applied Mathematics</p>
+<div class="flex items-center justify-center sm:justify-start space-x-1 mt-2 text-yellow-400">
+<span class="material-icons">star</span>
+<span class="material-icons">star</span>
+<span class="material-icons">star</span>
+<span class="material-icons">star</span>
+<span class="material-icons">star_half</span>
+<span class="text-text-secondary-light dark:text-text-secondary-dark ml-2">4.5 (25 reviews)</span>
+</div>
+<div class="mt-4 flex space-x-2">
+<span class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">Mathematics</span>
+<span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">Physics</span>
+</div>
+</div>
+</div>
+<div class="mt-6 border-t border-gray-200 dark:border-gray-700 pt-6">
+<h2 class="text-xl font-semibold mb-2">About Me</h2>
+<p class="text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">
+                            A passionate and experienced mathematics educator with over 10 years of experience in helping students excel in university entrance examinations. My teaching philosophy revolves around making complex concepts simple and relatable. I am dedicated to creating a supportive and engaging learning environment for all my students.
+                        </p>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark p-2 rounded-lg shadow-md">
+<div class="border-b border-gray-200 dark:border-gray-700">
+<nav aria-label="Tabs" class="-mb-px flex space-x-8">
+<a class="border-primary text-primary whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm" href="#">
+                                Classes
+                            </a>
+<a class="border-transparent text-text-secondary-light dark:text-text-secondary-dark hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm" href="#">
+                                Certifications
+                            </a>
+<a class="border-transparent text-text-secondary-light dark:text-text-secondary-dark hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm" href="#">
+                                Education
+                            </a>
+</nav>
+</div>
+<div class="py-6 space-y-6">
+<div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+<div>
+<h3 class="font-semibold text-lg">Advanced Mathematics for University Entrance</h3>
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark mt-1">Every Saturday &amp; Sunday | 8:30 AM - 12:30 PM</p>
+</div>
+<button class="mt-4 sm:mt-0 bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium">View Details</button>
+</div>
+<div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+<div>
+<h3 class="font-semibold text-lg">Combined Maths - Theory &amp; Revision</h3>
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark mt-1">Every Monday &amp; Wednesday | 4:00 PM - 6:00 PM</p>
+</div>
+<button class="mt-4 sm:mt-0 bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium">View Details</button>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-8">
+<div class="bg-card-light dark:bg-card-dark p-6 rounded-lg shadow-md">
+<h2 class="text-xl font-semibold mb-4">Contact Information</h2>
+<ul class="space-y-3 text-text-secondary-light dark:text-text-secondary-dark">
+<li class="flex items-center">
+<span class="material-icons mr-3 text-primary">email</span>
+<span>anushka.silva@example.com</span>
+</li>
+<li class="flex items-center">
+<span class="material-icons mr-3 text-primary">phone</span>
+<span>+94 77 123 4567</span>
+</li>
+<li class="flex items-center">
+<span class="material-icons mr-3 text-primary">location_on</span>
+<span>Colombo, Sri Lanka</span>
+</li>
+</ul>
+<button class="w-full mt-6 bg-primary text-white py-3 rounded-lg font-semibold flex items-center justify-center">
+<span class="material-icons mr-2">send</span>
+                        Send Message
+                    </button>
+</div>
+<div class="bg-card-light dark:bg-card-dark p-6 rounded-lg shadow-md">
+<h2 class="text-xl font-semibold mb-4">Statistics</h2>
+<div class="grid grid-cols-2 gap-4 text-center">
+<div>
+<p class="text-3xl font-bold text-primary">10+</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">Years of Experience</p>
+</div>
+<div>
+<p class="text-3xl font-bold text-primary">1500+</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">Students Taught</p>
+</div>
+<div>
+<p class="text-3xl font-bold text-primary">2</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">Active Classes</p>
+</div>
+<div>
+<p class="text-3xl font-bold text-primary">25</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">Reviews</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
