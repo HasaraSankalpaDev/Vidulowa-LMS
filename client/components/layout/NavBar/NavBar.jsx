@@ -67,7 +67,7 @@ const NavBar = () => {
             className="hidden md:flex cursor-pointer items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2 text-sm font-semibold text-blue-600 shadow hover:bg-blue-50 transition-all"
           >
             <FaRegUserCircle className="text-lg" />
-            Login / Register
+            Sign In
           </Link>
           {/* Mobile Menu Button */}
           <button
@@ -103,7 +103,7 @@ const NavBar = () => {
           ))}
           <button className="mt-2 flex items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2 text-sm font-semibold text-blue-600 shadow hover:bg-blue-50 transition-all cursor-pointer">
             <FaRegUserCircle className="text-lg" />
-            Login / Register
+            Sign In
           </button>
         </nav>
       )}
