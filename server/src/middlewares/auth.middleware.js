@@ -1,0 +1,24 @@
+// src/middlewares/auth.middleware.js
+import jwt from "jsonwebtoken";
+import { StudentModel } from "../models/student.model.js";
+
+export const authMiddleware = async (req, res, next) => {
+  try {
+    const authHeader = req.headers.authorization;
+    if (!authHeader || !authHeader.startsWith("Bearer "))
+      return res.status(401).json({ message: "Unauthorized" });
+
+    const token = authHeader.split(" ")[1];
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+    const student = await StudentModel.findById(decoded.id).select("-password");
+    if (!student) return res.status(401).json({ message: "Unauthorized" });
+
+    req.student = student;
+    next();
+  } catch (err) {
+    res
+      .status(401)
+      .json({ message: "Invalid or expired token", error: err.message });
+  }
+};
