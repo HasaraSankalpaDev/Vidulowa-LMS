@@ -37,13 +37,4 @@ export const registerSchema = z
   .refine((data) => data.password === data.cPassword, {
     message: "Passwords do not match",
     path: ["cPassword"],
-  })
-  .refine(
-    (data) =>
-      (data.role === "student" && data.grade && data.school) ||
-      (data.role === "teacher" && data.subject && data.school),
-    {
-      message: "Please fill all required fields for your role",
-      path: ["role"],
-    }
-  );
+  });
