@@ -42,11 +42,24 @@ const Form = ({
     }
   }, [watchedFields, onChange]);
 
+  // Base input classes
+  const getInputClasses = (fieldName) => {
+    const baseClasses =
+      "mt-1 block w-full rounded-md border bg-[#fcfdff] px-4 py-3 focus:outline-none";
+    const isFirstError = fieldName === firstErrorName;
+
+    if (isFirstError) {
+      return `${baseClasses} border-red-500 focus:border-red-500`;
+    } else {
+      return `${baseClasses} border-blue-100 focus:border-blue-300`;
+    }
+  };
+
   return (
-    <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
+    <form className="space-y-6" onSubmit={handleSubmit(onSubmit)} type="submit">
       {fields.map((field) => {
-        const showThisError = field.name === firstErrorName;
-        const fieldHasAnyError = !!errors[field.name];
+        const isFirstErrorField = field.name === firstErrorName;
+        const fieldHasError = !!errors[field.name];
 
         return (
           <div key={field.name}>
@@ -60,14 +73,14 @@ const Form = ({
                 {...register(field.name)}
                 rows={field.rows || 4}
                 placeholder={field.placeholder || ""}
-                className={`mt-1 block w-full rounded-md border border-blue-100 bg-[#fcfdff] focus:border-blue-300 px-4 py-3 focus:outline-none `}
-                aria-invalid={fieldHasAnyError}
+                className={getInputClasses(field.name)}
+                aria-invalid={isFirstErrorField}
               />
             ) : field.type === "select" ? (
               <select
                 id={field.name}
                 {...register(field.name)}
-                className="mt-1 block w-full rounded-md border border-blue-100 bg-[#fcfdff] focus:border-blue-300 px-4 py-3 focus:outline-none"
+                className={getInputClasses(field.name)}
               >
                 <option value="">Select {field.label}</option>
                 {field.options.map((option) => (
@@ -82,14 +95,15 @@ const Form = ({
                 {...register(field.name)}
                 type={field.type || "text"}
                 placeholder={field.placeholder || ""}
-                className="mt-1 block w-full rounded-md border border-blue-100 bg-[#fcfdff] focus:border-blue-300 px-4 py-3 focus:outline-none"
-                aria-invalid={fieldHasAnyError}
+                className={getInputClasses(field.name)}
+                aria-invalid={isFirstErrorField}
               />
             )}
 
-            {showThisError && (
+            {/* Only show error message for the FIRST field with error */}
+            {isFirstErrorField && (
               <div className="mt-2 flex items-center gap-1 text-red-600">
-                <MdError className="w-5 h-" />
+                <MdError className="w-5 h-5" />
                 <p role="alert" className="text-md font-medium">
                   {errors[field.name]?.message}
                 </p>

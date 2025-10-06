@@ -11,6 +11,7 @@ import "express-async-errors"; // catch async errors automatically
 
 // Routes
 import studentRoutes from "./routes/student.routes.js";
+import teacherRoutes from "./routes/teacher.routes.js";
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(
   })
 );
 app.use(limiter);
+app.use(express.json());
 
 // Body parser
 app.use(express.json({ limit: "10kb" }));
@@ -38,7 +40,8 @@ app.get("/", (req, res) => {
 });
 
 // API Routes
-app.use("/api/students", studentRoutes);
+app.use("/api/v1/students", studentRoutes);
+app.use("/api/v1/teachers", teacherRoutes);
 
 // Global error handler (must be last)
 app.use(errorHandler);

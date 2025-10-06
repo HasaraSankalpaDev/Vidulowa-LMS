@@ -1,6 +1,6 @@
-// src/middlewares/auth.middleware.js
 import jwt from "jsonwebtoken";
 import { StudentModel } from "../models/student.model.js";
+import { TeacherModel } from "../models/teacher.model.js";
 
 export const authMiddleware = async (req, res, next) => {
   try {
@@ -11,10 +11,17 @@ export const authMiddleware = async (req, res, next) => {
     const token = authHeader.split(" ")[1];
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    const student = await StudentModel.findById(decoded.id).select("-password");
-    if (!student) return res.status(401).json({ message: "Unauthorized" });
+    let user;
+    if (decoded.role === "student") {
+      user = await StudentModel.findById(decoded.id).select("-password");
+      req.student = user;
+    } else if (decoded.role === "teacher") {
+      user = await TeacherModel.findById(decoded.id).select("-password");
+      req.teacher = user;
+    }
 
-    req.student = student;
+    if (!user) return res.status(401).json({ message: "Unauthorized" });
+
     next();
   } catch (err) {
     res

@@ -101,10 +101,13 @@ const NavBar = () => {
               {item.name}
             </Link>
           ))}
-          <button className="mt-2 flex items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2 text-sm font-semibold text-blue-600 shadow hover:bg-blue-50 transition-all cursor-pointer">
+          <a
+            href="/login"
+            className="mt-2 flex items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2 text-sm font-semibold text-blue-600 shadow hover:bg-blue-50 transition-all cursor-pointer"
+          >
             <FaRegUserCircle className="text-lg" />
             Sign In
-          </button>
+          </a>
         </nav>
       )}
     </header>

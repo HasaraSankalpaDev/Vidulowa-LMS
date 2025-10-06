@@ -1,164 +1,89 @@
 "use client";
-import Footer from "@/components/layout/Footer/Footer";
+import React, { useState, useMemo } from "react";
+import { toast, Toaster } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 import NavBar from "@/components/layout/NavBar/NavBar";
+import Footer from "@/components/layout/Footer/Footer";
 import Form from "@/components/ui/Form";
 import { registerSchema } from "@/schemas/registerSchema";
-import React, { useState, useMemo } from "react";
+import {
+  baseFields,
+  studentFields,
+  teacherFields,
+  phoneField,
+} from "@/data/RegisterData";
+import API from "@/utils/api";
 
 const RegisterPage = () => {
   const [role, setRole] = useState("student");
-
-  // Base fields for all users
-  const baseFields = [
-    {
-      name: "fullName",
-      label: "Full Name",
-      type: "text",
-      placeholder: "Enter your full name",
-    },
-    {
-      name: "email",
-      label: "Email Address",
-      type: "email",
-      placeholder: "Enter your email address",
-    },
-    {
-      name: "password",
-      label: "Password",
-      type: "password",
-      placeholder: "Enter a secure password",
-    },
-    {
-      name: "cPassword",
-      label: "Confirm Password",
-      type: "password",
-      placeholder: "Confirm password",
-    },
-    {
-      name: "role",
-      label: "Role",
-      type: "select",
-      options: ["student", "teacher"],
-    },
-  ];
-
-  // Extra fields for student
-  const studentFields = [
-    {
-      name: "grade",
-      label: "Grade / Level",
-      type: "select",
-      options: [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10",
-        "11",
-        "12",
-        "13",
-      ],
-    },
-    {
-      name: "school",
-      label: "School / University",
-      type: "text",
-      placeholder: "Enter your school or university name",
-    },
-  ];
-
-  // Extra fields for teacher
-  const teacherFields = [
-    {
-      name: "subject",
-      label: "Subject Expertise",
-      type: "select",
-      options: [
-        "Mathematics",
-        "Science",
-        "Combined Science",
-        "English Language",
-        "Sinhala",
-        "Tamil",
-        "History",
-        "Geography",
-        "Citizenship Education",
-        "Religion & Ethics",
-        "Physics",
-        "Chemistry",
-        "Biology",
-        "Commerce",
-        "Accounting",
-        "Business Studies",
-        "Economics",
-        "Political Science",
-        "Information Technology (IT)",
-        "Information and Communication Technology (ICT)",
-        "Agriculture",
-        "Buddhism",
-        "Hinduism",
-        "Christianity",
-        "Islam",
-        "Art",
-        "Music",
-        "Drama",
-        "Home Science",
-        "Design & Technology",
-        "Health & Physical Education",
-        "French",
-        "German",
-        "Japanese",
-        "Chinese",
-        "Technical Drawing",
-        "Environmental Science",
-      ],
-    },
-
-    {
-      name: "school",
-      label: "School / University",
-      type: "text",
-      placeholder: "Enter your school or university name",
-    },
-  ];
-
-  //  extra field
-  const phoneField = {
-    name: "phone",
-    label: "Phone Number",
-    type: "tel",
-    placeholder: "Enter your phone number",
-  };
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const fields = useMemo(() => {
-    if (role === "student")
-      return [...baseFields, ...studentFields, phoneField];
-    if (role === "teacher")
-      return [...baseFields, ...teacherFields, phoneField];
-    return [...baseFields, phoneField];
+    return role === "student"
+      ? [...baseFields, ...studentFields, phoneField]
+      : [...baseFields, ...teacherFields, phoneField];
   }, [role]);
 
-  const handleRegister = (data) => {
-    console.log("Register Data:", data);
-    alert("Registration Success!");
-  };
+  const handleRegister = async (data) => {
+    setLoading(true);
+    const toastId = toast.loading("Registering...");
 
-  const handleFieldChange = (name, value) => {
-    if (name === "role") {
-      setRole(value);
+    try {
+      const endpoint =
+        data.role === "student" ? "students/register" : "teachers/register";
+      const response = await API.post(endpoint, data);
+
+      toast.dismiss(toastId);
+      toast.success("Registration successful! Redirecting...");
+
+      setTimeout(() => router.push("/login"), 1500);
+    } catch (err) {
+      toast.dismiss(toastId);
+
+      // Email exists error
+      if (
+        err.response?.status === 409 ||
+        err.response?.data?.message?.includes("already exists")
+      ) {
+        toast.error("Email already registered. Please use a different email.");
+        return;
+      }
+
+      // Validation errors from backend (Zod)
+      if (err.response?.data?.errors) {
+        err.response.data.errors.forEach((e) => toast.error(e.message));
+        return;
+      }
+
+      // Network errors
+      if (!err.response) {
+        toast.error("Network error. Please check your connection.");
+        return;
+      }
+
+      // Server errors
+      if (err.response?.status >= 500) {
+        toast.error("Server error. Please try again later.");
+        return;
+      }
+
+      // Default error
+      toast.error(err.response?.data?.message || "Registration failed");
+    } finally {
+      setLoading(false);
     }
   };
 
+  const handleFieldChange = (name, value) => {
+    if (name === "role") setRole(value);
+  };
+
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gray-50">
       <NavBar />
-      <main className="flex flex-1 items-center justify-center px-4 mt-5 mb-15">
-        <div className="w-full max-w-xl bg-white rounded-lg shadow-lg p-8 mb-10">
+      <main className="flex-1 flex items-center justify-center px-4 py-8">
+        <div className="w-full max-w-xl bg-white rounded-lg shadow-lg p-8">
           <h2 className="text-2xl font-bold text-center mb-2">Register Now!</h2>
           <p className="text-center text-gray-600 mb-6">
             Register to continue your learning journey.
@@ -166,21 +91,23 @@ const RegisterPage = () => {
 
           <Form
             fields={fields}
-            buttonText="Register Now"
+            buttonText={loading ? "Registering..." : "Register Now"}
             onSubmit={handleRegister}
             onChange={handleFieldChange}
             validationSchema={registerSchema}
+            disabled={loading}
           />
 
-          <div className="mt-6 text-center text-md text-gray-600">
+          <div className="mt-6 text-center text-gray-600">
             Already have an account?{" "}
             <a href="/login" className="text-blue-500 hover:underline">
-              Login Now here
+              Login Here
             </a>
           </div>
         </div>
       </main>
       <Footer />
+      <Toaster position="top-right" />
     </div>
   );
 };

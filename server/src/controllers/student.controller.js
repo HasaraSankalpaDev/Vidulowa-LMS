@@ -1,7 +1,7 @@
-// src/controllers/student.controller.js
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { StudentModel } from "../models/StudentModel.js";
+import { StudentModel } from "../models/student.model.js";
+import * as z from "zod";
 import {
   registerSchema,
   loginSchema,
@@ -55,7 +55,12 @@ export const loginStudent = async (req, res) => {
       return res.status(400).json({ message: "Invalid credentials" });
 
     const token = jwt.sign(
-      { id: student._id, email: student.email, role: student.userType },
+      {
+        id: student._id,
+        email: student.email,
+        role: student.userType,
+        userType: student.userType,
+      },
       process.env.JWT_SECRET,
       { expiresIn: "1d" }
     );
@@ -64,6 +69,33 @@ export const loginStudent = async (req, res) => {
   } catch (err) {
     if (err instanceof z.ZodError)
       return res.status(400).json({ errors: err.errors });
+    res
+      .status(500)
+      .json({ message: "Internal server error", error: err.message });
+  }
+};
+
+// GET PROFILE
+export const getProfile = async (req, res) => {
+  try {
+    // req.student is set in authMiddleware
+    if (!req.student) return res.status(401).json({ message: "Unauthorized" });
+
+    res.status(200).json({
+      message: "Profile info",
+      student: {
+        id: req.student._id,
+        fullName: req.student.fullName,
+        email: req.student.email,
+        phone: req.student.phone,
+        grade: req.student.grade,
+        school: req.student.school,
+        userType: req.student.userType,
+        subject: req.student.subject,
+        createdAt: req.student.createdAt,
+      },
+    });
+  } catch (err) {
     res
       .status(500)
       .json({ message: "Internal server error", error: err.message });

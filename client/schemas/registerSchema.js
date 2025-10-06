@@ -30,9 +30,9 @@ export const registerSchema = z
     role: z.enum(["student", "teacher"], {
       required_error: "Role is required",
     }),
-    grade: z.string().optional(),
-    school: z.string().optional(),
-    subject: z.string().optional(),
+    grade: z.string().nonempty("Grade is required"),
+    school: z.string().nonempty("School is required"),
+    subject: z.string().nonempty("Subject is required"),
   })
   .refine((data) => data.password === data.cPassword, {
     message: "Passwords do not match",
