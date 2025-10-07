@@ -27,57 +27,46 @@ const LoginPage = () => {
     },
   ];
 
-  // Manual JWT decoding function
-  const decodeJWT = (token) => {
-    try {
-      const base64Url = token.split(".")[1];
-      const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
-      const jsonPayload = decodeURIComponent(
-        atob(base64)
-          .split("")
-          .map(function (c) {
-            return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
-          })
-          .join("")
-      );
-      return JSON.parse(jsonPayload);
-    } catch (error) {
-      console.error("Error decoding JWT:", error);
-      throw new Error("Invalid token");
-    }
-  };
-
   const handleLogin = async (data) => {
     setLoading(true);
     try {
-      // Try student login first
+      // Try logging in as student first
       let res = await API.post("students/login", data).catch(async (err) => {
         if (err.response && err.response.status === 400) {
+          // Try teacher login if student login fails
           return await API.post("teachers/login", data);
         } else {
           throw err;
         }
       });
 
-      const token = res.data.token;
-      localStorage.setItem("token", token);
       toast.success(res.data.message);
 
-      // Decode JWT using manual function
-      const decoded = decodeJWT(token);
-      const role = decoded.userType || decoded.role;
+      // ✅ Save user info temporarily (not token)
+      const user = res.data.user;
 
-      // Redirect based on role
-      if (role === "student") router.push("/student/dashboard");
-      else if (role === "teacher") router.push("/teacher/dashboard");
-      else if (role === "admin") router.push("/admin/dashboard");
-      else router.push("/");
+      if (!user) {
+        throw new Error("User data missing from response");
+      }
+
+      // Store non-sensitive user info in sessionStorage
+      sessionStorage.setItem("user", JSON.stringify(user));
+
+      // ✅ Redirect based on user role
+      if (user.userType === "student") {
+        router.push("/student/dashboard");
+      } else if (user.userType === "teacher") {
+        router.push("/teacher/dashboard");
+      } else {
+        router.push("/");
+      }
     } catch (err) {
-      console.error(err);
+      console.error("Login error:", err);
+
       if (err.response?.data?.message) {
         toast.error(err.response.data.message);
       } else {
-        toast.error("Something went wrong. Try again.");
+        toast.error("Login failed. Please check your credentials.");
       }
     } finally {
       setLoading(false);

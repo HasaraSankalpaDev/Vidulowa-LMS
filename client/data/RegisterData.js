@@ -1,127 +1,109 @@
-const baseFields = [
+export const baseFields = [
+  {
+    name: "userType",
+    label: "Select Role",
+    type: "select",
+    required: true,
+    options: [
+      { value: "student", label: "Student" },
+      { value: "teacher", label: "Teacher" },
+    ],
+  },
   {
     name: "fullName",
     label: "Full Name",
     type: "text",
     placeholder: "Enter your full name",
+    required: true,
   },
   {
     name: "email",
     label: "Email Address",
     type: "email",
-    placeholder: "Enter your email address",
+    placeholder: "Enter your email",
+    required: true,
   },
   {
     name: "password",
     label: "Password",
     type: "password",
-    placeholder: "Enter a secure password",
+    placeholder: "Create a password (min. 6 characters)",
+    required: true,
   },
   {
-    name: "cPassword",
+    name: "confirmPassword",
     label: "Confirm Password",
     type: "password",
-    placeholder: "Confirm password",
-  },
-  {
-    name: "role",
-    label: "Role",
-    type: "select",
-    options: ["student", "teacher"],
+    placeholder: "Confirm your password",
+    required: true,
   },
 ];
 
-// Extra fields for student
-const studentFields = [
+export const studentFields = [
   {
     name: "grade",
-    label: "Grade / Level",
+    label: "Grade",
     type: "select",
+    required: true,
     options: [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7",
-      "8",
-      "9",
-      "10",
-      "11",
-      "12",
-      "13",
+      { value: "6", label: "Grade 6" },
+      { value: "7", label: "Grade 7" },
+      { value: "8", label: "Grade 8" },
+      { value: "9", label: "Grade 9" },
+      { value: "10", label: "Grade 10" },
+      { value: "11", label: "Grade 11" },
+      { value: "12", label: "Grade 12" },
     ],
   },
   {
     name: "school",
-    label: "School / University",
+    label: "School",
     type: "text",
-    placeholder: "Enter your school or university name",
+    placeholder: "Enter your school name",
+    required: true,
   },
-];
-
-// Extra fields for teacher
-const teacherFields = [
   {
     name: "subject",
-    label: "Subject Expertise",
+    label: "Select Subject",
     type: "select",
+    required: false,
     options: [
-      "Mathematics",
-      "Science",
-      "Combined Science",
-      "English Language",
-      "Sinhala",
-      "Tamil",
-      "History",
-      "Geography",
-      "Citizenship Education",
-      "Religion & Ethics",
-      "Physics",
-      "Chemistry",
-      "Biology",
-      "Commerce",
-      "Accounting",
-      "Business Studies",
-      "Economics",
-      "Political Science",
-      "Information Technology (IT)",
-      "Information and Communication Technology (ICT)",
-      "Agriculture",
-      "Buddhism",
-      "Hinduism",
-      "Christianity",
-      "Islam",
-      "Art",
-      "Music",
-      "Drama",
-      "Home Science",
-      "Design & Technology",
-      "Health & Physical Education",
-      "French",
-      "German",
-      "Japanese",
-      "Chinese",
-      "Technical Drawing",
-      "Environmental Science",
+      { value: "mathematics", label: "Mathematics" },
+      { value: "science", label: "Science" },
+      { value: "english", label: "English" },
+      { value: "history", label: "History" },
+      { value: "computer-science", label: "Computer Science" },
     ],
-  },
-
-  {
-    name: "school",
-    label: "School / University",
-    type: "text",
-    placeholder: "Enter your school or university name",
   },
 ];
 
-//  extra field
-const phoneField = {
+export const teacherFields = [
+  {
+    name: "subject",
+    label: "Select Subject",
+    type: "select",
+    required: true,
+    options: [
+      { value: "mathematics", label: "Mathematics" },
+      { value: "science", label: "Science" },
+      { value: "english", label: "English" },
+      { value: "history", label: "History" },
+      { value: "computer-science", label: "Computer Science" },
+    ],
+  },
+  {
+    name: "school",
+    label: "School/Institution",
+    type: "text",
+    placeholder: "Enter your school/institution name",
+    required: true,
+  },
+];
+
+export const phoneField = {
   name: "phone",
   label: "Phone Number",
   type: "tel",
   placeholder: "Enter your phone number",
+  required: false,
 };
-
-export { baseFields, studentFields, teacherFields, phoneField };

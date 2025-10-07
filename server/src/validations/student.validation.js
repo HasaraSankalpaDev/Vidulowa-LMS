@@ -1,62 +1,20 @@
 // src/validations/student.validation.js
 import * as z from "zod";
 
-// REGISTER VALIDATION
-export const registerSchema = z
-  .object({
-    fullName: z
-      .string()
-      .nonempty("Full Name is required")
-      .min(5, "Name must have minimum 5 characters"),
-    email: z
-      .string()
-      .nonempty("Email is required")
-      .email("Invalid Email Address"),
-    password: z
-      .string()
-      .nonempty("Password is required")
-      .min(8, "Password must be at least 8 characters long")
-      .regex(
-        /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
-        "Password must include uppercase, lowercase, number, and special character"
-      ),
-    cPassword: z.string().nonempty("Confirm Password is required"),
-    role: z.enum(["student", "teacher"], {
-      required_error: "Role is required",
-    }),
-    phone: z
-      .string()
-      .nonempty("Phone is required")
-      .regex(
-        /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/,
-        "Invalid Phone Number"
-      ),
-    grade: z.string().optional(),
-    school: z.string().optional(),
-    subject: z.string().optional(),
-  })
-  .refine((data) => data.password === data.cPassword, {
-    message: "Passwords do not match",
-    path: ["cPassword"],
-  })
-  .refine(
-    (data) =>
-      (data.role === "student" && data.grade && data.school) ||
-      (data.role === "teacher" && data.subject && data.school),
-    {
-      message: "Please fill all required fields for your role",
-      path: ["role"],
-    }
-  );
+export const registerSchema = z.object({
+  fullName: z.string().min(2, "Full name must be at least 2 characters"),
+  email: z.string().email("Invalid email address"),
+  password: z.string().min(6, "Password must be at least 6 characters"),
+  phone: z
+    .string()
+    .min(10, "Phone number must be at least 10 digits")
+    .optional(),
+  grade: z.string().min(1, "Grade is required"),
+  school: z.string().min(1, "School is required"),
+  subject: z.string().min(1, "Subject is required").optional(),
+});
 
-// LOGIN VALIDATION
 export const loginSchema = z.object({
-  email: z
-    .string()
-    .nonempty("Email is required")
-    .email("Invalid Email Address"),
-  password: z
-    .string()
-    .nonempty("Password is required")
-    .min(8, "Password must be at least 8 characters long"),
+  email: z.string().email("Invalid email address"),
+  password: z.string().min(1, "Password is required"),
 });

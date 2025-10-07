@@ -2,39 +2,41 @@ import * as z from "zod";
 
 export const registerSchema = z
   .object({
-    fullName: z
-      .string()
-      .nonempty("Full Name is required")
-      .min(5, "Name must have minimum 5 characters"),
-    email: z
-      .string()
-      .nonempty("Email is required")
-      .email("Invalid Email Address"),
-    password: z
-      .string()
-      .nonempty("Password is required")
-      .min(8, "Password must be at least 8 characters long")
-      .regex(
-        /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
-        "Password must include uppercase, lowercase, number, and special character"
-      ),
-    phone: z
-      .string()
-      .nonempty("Phone is required")
-      .min(8, "Phone must be at least 10 characters long")
-      .regex(
-        /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/,
-        "Invalid Phone Number"
-      ),
-    cPassword: z.string().nonempty("Confirm Password is required"),
-    role: z.enum(["student", "teacher"], {
-      required_error: "Role is required",
-    }),
-    grade: z.string().nonempty("Grade is required"),
-    school: z.string().nonempty("School is required"),
-    subject: z.string().nonempty("Subject is required"),
+    userType: z.enum(["student", "teacher"]),
+    fullName: z.string().min(2, "Full name must be at least 2 characters"),
+    email: z.string().email("Invalid email address"),
+    password: z.string().min(6, "Password must be at least 6 characters"),
+    confirmPassword: z.string().min(1, "Please confirm your password"),
+    phone: z.string().optional(),
+    grade: z.string().optional(),
+    school: z.string().min(1, "School is required"),
+    subject: z.string().optional(),
   })
-  .refine((data) => data.password === data.cPassword, {
-    message: "Passwords do not match",
-    path: ["cPassword"],
+  .refine(
+    (data) => {
+      if (data.userType === "student") {
+        return !!data.grade && data.grade.trim() !== "";
+      }
+      return true;
+    },
+    {
+      message: "Grade is required for students",
+      path: ["grade"],
+    }
+  )
+  .refine(
+    (data) => {
+      if (data.userType === "teacher") {
+        return !!data.subject && data.subject.trim() !== "";
+      }
+      return true;
+    },
+    {
+      message: "Subject is required for teachers",
+      path: ["subject"],
+    }
+  )
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Passwords don't match",
+    path: ["confirmPassword"],
   });

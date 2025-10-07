@@ -83,9 +83,9 @@ const Form = ({
                 className={getInputClasses(field.name)}
               >
                 <option value="">Select {field.label}</option>
-                {field.options.map((option) => (
-                  <option key={option} value={option}>
-                    {option.charAt(0).toUpperCase() + option.slice(1)}
+                {field.options?.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
                   </option>
                 ))}
               </select>

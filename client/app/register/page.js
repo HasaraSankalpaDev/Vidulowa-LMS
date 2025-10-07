@@ -12,71 +12,108 @@ import {
   teacherFields,
   phoneField,
 } from "@/data/RegisterData";
-import API from "@/utils/api";
+import axios from "axios";
 
 const RegisterPage = () => {
-  const [role, setRole] = useState("student");
+  const [userType, setUserType] = useState("student");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   const fields = useMemo(() => {
-    return role === "student"
-      ? [...baseFields, ...studentFields, phoneField]
-      : [...baseFields, ...teacherFields, phoneField];
-  }, [role]);
+    const allFields = [
+      ...baseFields,
+      ...(userType === "student" ? studentFields : teacherFields),
+      phoneField,
+    ];
+
+    // Update the userType field to reflect current selection
+    return allFields.map((field) =>
+      field.name === "userType" ? { ...field, value: userType } : field
+    );
+  }, [userType]);
 
   const handleRegister = async (data) => {
     setLoading(true);
     const toastId = toast.loading("Registering...");
 
+    console.log("Raw form data:", data);
+
     try {
-      const endpoint =
-        data.role === "student" ? "students/register" : "teachers/register";
-      const response = await API.post(endpoint, data);
+      // Create payload based on user type
+      let finalPayload;
+
+      if (userType === "student") {
+        // Student payload - remove confirmPassword
+        const { confirmPassword, ...studentPayload } = data;
+        finalPayload = {
+          fullName: studentPayload.fullName,
+          email: studentPayload.email,
+          password: studentPayload.password,
+          phone: studentPayload.phone || "",
+          grade: studentPayload.grade,
+          school: studentPayload.school,
+          userType: studentPayload.userType,
+          subject: studentPayload.subject || "",
+        };
+      } else {
+        // Teacher payload - include confirmPassword for validation
+        finalPayload = {
+          fullName: data.fullName,
+          email: data.email,
+          password: data.password,
+          confirmPassword: data.confirmPassword, // Keep this for teacher validation
+          phone: data.phone || "",
+          school: data.school,
+          userType: data.userType,
+          subject: data.subject,
+        };
+      }
+
+      // Clean up payload - remove empty fields
+      Object.keys(finalPayload).forEach((key) => {
+        if (finalPayload[key] === "" || finalPayload[key] == null) {
+          delete finalPayload[key];
+        }
+      });
+
+      console.log("Final payload for backend:", finalPayload);
+
+      const response = await axios.post(
+        `http://localhost:5000/api/v1/${userType}s/register`,
+        finalPayload
+      );
+
+      console.log("Registration successful:", response.data);
 
       toast.dismiss(toastId);
-      toast.success("Registration successful! Redirecting...");
+      toast.success("Registration successful! Redirecting to login...");
 
       setTimeout(() => router.push("/login"), 1500);
     } catch (err) {
+      console.error("Full register error:", err);
+      console.error("Error response data:", err.response?.data);
+      console.error("Error status:", err.response?.status);
+
       toast.dismiss(toastId);
 
-      // Email exists error
-      if (
-        err.response?.status === 409 ||
-        err.response?.data?.message?.includes("already exists")
-      ) {
-        toast.error("Email already registered. Please use a different email.");
-        return;
-      }
-
-      // Validation errors from backend (Zod)
       if (err.response?.data?.errors) {
-        err.response.data.errors.forEach((e) => toast.error(e.message));
-        return;
+        // Handle Zod validation errors from backend
+        err.response.data.errors.forEach((error) =>
+          toast.error(`${error.field}: ${error.message}`)
+        );
+      } else if (err.response?.data?.message) {
+        toast.error(err.response.data.message);
+      } else {
+        toast.error("Registration failed. Please try again.");
       }
-
-      // Network errors
-      if (!err.response) {
-        toast.error("Network error. Please check your connection.");
-        return;
-      }
-
-      // Server errors
-      if (err.response?.status >= 500) {
-        toast.error("Server error. Please try again later.");
-        return;
-      }
-
-      // Default error
-      toast.error(err.response?.data?.message || "Registration failed");
     } finally {
       setLoading(false);
     }
   };
-
   const handleFieldChange = (name, value) => {
-    if (name === "role") setRole(value);
+    if (name === "userType") {
+      setUserType(value);
+    }
   };
 
   return (
@@ -86,7 +123,7 @@ const RegisterPage = () => {
         <div className="w-full max-w-xl bg-white rounded-lg shadow-lg p-8">
           <h2 className="text-2xl font-bold text-center mb-2">Register Now!</h2>
           <p className="text-center text-gray-600 mb-6">
-            Register to continue your learning journey.
+            Join our learning community as a {userType}.
           </p>
 
           <Form
