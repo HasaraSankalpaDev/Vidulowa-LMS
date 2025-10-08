@@ -72,48 +72,38 @@ export const registerTeacher = async (req, res) => {
 
 // LOGIN TEACHER
 export const loginTeacher = async (req, res) => {
-  try {
-    const data = loginTeacherSchema.parse(req.body);
+  const { email, password } = req.body;
+  const teacher = await TeacherModel.findOne({ email });
+  if (!teacher) return res.status(400).json({ message: "Invalid credentials" });
 
-    const teacher = await TeacherModel.findOne({ email: data.email });
-    if (!teacher)
-      return res.status(400).json({ message: "Invalid credentials" });
+  const isMatch = await bcrypt.compare(password, teacher.password);
+  if (!isMatch) return res.status(400).json({ message: "Invalid credentials" });
 
-    const isMatch = await bcrypt.compare(data.password, teacher.password);
-    if (!isMatch)
-      return res.status(400).json({ message: "Invalid credentials" });
+  const token = jwt.sign(
+    { id: teacher._id, email: teacher.email, userType: teacher.userType },
+    process.env.JWT_SECRET,
+    { expiresIn: "7d" }
+  );
 
-    const token = jwt.sign(
-      { id: teacher._id, email: teacher.email, userType: "teacher" },
-      process.env.JWT_SECRET,
-      { expiresIn: "1d" }
-    );
+  // Send token in HTTP-only cookie
+  res.cookie("token", token, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "strict",
+    maxAge: 7 * 24 * 60 * 60 * 1000, // 1 day
+  });
 
-    res.status(200).json({
-      message: "Login successful",
-      token,
-      user: {
-        id: teacher._id,
-        fullName: teacher.fullName,
-        email: teacher.email,
-        userType: "teacher",
-        subject: teacher.subject,
-        school: teacher.school,
-      },
-    });
-  } catch (err) {
-    if (err instanceof z.ZodError)
-      return res.status(400).json({
-        message: "Validation failed",
-        errors: err.errors.map((error) => ({
-          field: error.path[0],
-          message: error.message,
-        })),
-      });
-    res
-      .status(500)
-      .json({ message: "Internal server error", error: err.message });
-  }
+  res.json({
+    message: "Login successful",
+    user: {
+      id: teacher._id,
+      fullName: teacher.fullName,
+      email: teacher.email,
+      userType: teacher.userType,
+      subject: teacher.subject,
+      school: teacher.school,
+    },
+  });
 };
 
 // GET PROFILE

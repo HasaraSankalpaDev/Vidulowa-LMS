@@ -5,42 +5,39 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { profileSchema } from "@/schemas/profileSchema ";
 
-export default function ProfileForm() {
-  // Initial user data
-  const userData = {
-    fullName: "Hasara",
-    email: "hlk@lk.lk",
-    phoneNumber: "0702000982",
-    profilePicture:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuA2sdOcbQTRbhUVPQtuzGX4f04Fty2gMumNSbSVVXC6dvJRcMaFhPgbajd58KWgSVRQ44RLZmTwic2SKeVXjmlI1EYkGVnR_j-20H3_3x_a-Mjj6kubReQgi30_xBb6gK7qj5m-W-hPf83ffVvumgKFOys3cD0q6saIIs5o-5m-QIjXEhZawmqVsvX_OZJ-UPBG5sIPx1O3dE-6-Do4Ai4969sKxHQW187aR2RblCXZ1JRUP6BYvFEQIegy9p8rM5UqyioBK3aTYS9i",
-  };
+export default function ProfileForm({ default_data = {} }) {
+  const defaultAvatar =
+    "https://icons.iconarchive.com/icons/papirus-team/papirus-status/512/avatar-default-icon.png";
 
-  const [preview, setPreview] = useState(userData.profilePicture);
+  const [preview, setPreview] = useState(
+    default_data.profilePicture || defaultAvatar
+  );
 
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(profileSchema),
-    defaultValues: userData,
+    defaultValues: default_data,
   });
 
   const onSubmit = (data) => {
     console.log("Profile updated ✅", data);
   };
 
-  // Handle image change and update preview
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
       setPreview(URL.createObjectURL(file));
+      setValue("profilePicture", file); // Update form value
     }
   };
 
-  // Handle delete image
   const handleDeleteImage = () => {
-    setPreview(""); // Or set to default avatar URL
+    setPreview(defaultAvatar);
+    setValue("profilePicture", null); // Clear form value
   };
 
   return (
@@ -54,7 +51,7 @@ export default function ProfileForm() {
         <div className="flex items-center space-x-4 mb-4">
           <div className="relative">
             <img
-              src={preview || "/default-avatar.png"}
+              src={preview}
               alt="Profile"
               className="w-24 h-24 rounded-full object-cover"
             />
@@ -116,7 +113,7 @@ export default function ProfileForm() {
           label="Phone Number"
           id="phoneNumber"
           type="tel"
-          {...register("phoneNumber")}
+          {...register("phone")}
           error={errors.phoneNumber?.message}
         />
       </div>

@@ -4,6 +4,7 @@ import ProfileForm from "@/components/pages/student/ProfileForm";
 import PasswordForm from "@/components/pages/student/PasswordForm";
 import NotificationsForm from "@/components/pages/student/NotificationsForm";
 import PrivacyForm from "@/components/pages/student/PrivacyForm";
+import { useTeacher } from "@/context/TeacherContext";
 
 const ProfilePage = () => {
   const [notifications, setNotifications] = useState({
@@ -16,6 +17,12 @@ const ProfilePage = () => {
     profileVisible: true,
     allowDMs: false,
   });
+
+  // ✅ Get both teacher and student data
+  const { teacher } = useTeacher() || {};
+
+  // ✅ Choose which user is active
+  const userData = teacher;
 
   return (
     <main className="flex-1 p-6 lg:p-8 bg-background-light dark:bg-background-dark text-foreground-light dark:text-foreground-dark">
@@ -31,8 +38,8 @@ const ProfilePage = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Left Column */}
         <div className="lg:col-span-2 space-y-8">
-          {/* Profile Section */}
-          <ProfileForm />
+          {/* ✅ Pass correct data */}
+          <ProfileForm default_data={userData} />
 
           {/* Change Password */}
           <PasswordForm />
@@ -40,13 +47,10 @@ const ProfilePage = () => {
 
         {/* Right Column */}
         <div className="lg:col-span-1 space-y-8">
-          {/* Notifications */}
           <NotificationsForm
             notifications={notifications}
             setNotifications={setNotifications}
           />
-
-          {/* Privacy */}
           <PrivacyForm privacy={privacy} setPrivacy={setPrivacy} />
         </div>
       </div>

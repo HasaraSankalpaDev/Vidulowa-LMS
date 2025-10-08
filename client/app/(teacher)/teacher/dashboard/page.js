@@ -1,6 +1,6 @@
 "use client";
+import React, { useEffect, useState } from "react";
 import { stats, completionData, monthlyData } from "@/data/TeacherPageData";
-import React from "react";
 import { FaUsers } from "react-icons/fa";
 import {
   BarChart,
@@ -11,8 +11,44 @@ import {
   ResponsiveContainer,
   Legend,
 } from "recharts";
+import API from "@/utils/api"; // ✅ use your centralized Axios instance
 
 const Dashboard = () => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const res = await API.get("teachers/profile"); // ✅ no need to repeat full URL
+        // Backend sends { message, teacher: { ... } }, not `user`
+        setUser(res.data.teacher);
+      } catch (err) {
+        console.error("Failed to fetch profile:", err.response?.data || err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProfile();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen mt-5 flex items-center justify-center">
+        <div className="text-lg">Loading...</div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return (
+      <div className="min-h-screen mt-5 flex items-center justify-center">
+        <div className="text-red-500 text-lg">Failed to load user data</div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen mt-5">
       {/* Header */}
@@ -21,9 +57,10 @@ const Dashboard = () => {
           Dashboard
         </h1>
         <p className="text-gray-600">
-          Manage your classes, students, and schedules
+          Welcome back, {user.fullName || user.email}!
         </p>
       </div>
+
       {/* Stats Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         {stats.map((stat, index) => (
@@ -98,7 +135,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Monthly Progress with Recharts */}
+        {/* Monthly Progress */}
         <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg transition duration-300">
           <h3 className="text-xl font-semibold text-gray-900 mb-4">
             Monthly Progress
@@ -136,7 +173,7 @@ const Dashboard = () => {
               </div>
               <div className="flex-1">
                 <p className="text-sm font-medium text-gray-900">
-                  New assignment submitted in Mathematics
+                  New assignment submitted in {user.subject || "Mathematics"}
                 </p>
                 <p className="text-xs text-gray-400">2 hours ago</p>
               </div>

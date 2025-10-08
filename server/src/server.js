@@ -8,6 +8,7 @@ import { connectDB } from "./utils/db.js";
 import { limiter } from "./middlewares/rateLimiter.middleware.js";
 import { errorHandler } from "./middlewares/error.middleware.js";
 import "express-async-errors"; // catch async errors automatically
+import cookieParser from "cookie-parser";
 
 // Routes
 import studentRoutes from "./routes/student.routes.js";
@@ -19,12 +20,13 @@ const app = express();
 app.use(helmet());
 app.use(
   cors({
-    origin: config.corsOrigin,
+    origin: "http://localhost:3000",
     credentials: true,
   })
 );
 app.use(limiter);
 app.use(express.json());
+app.use(cookieParser());
 
 // Body parser
 app.use(express.json({ limit: "10kb" }));

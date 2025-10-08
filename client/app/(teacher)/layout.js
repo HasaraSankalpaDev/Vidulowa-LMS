@@ -2,33 +2,44 @@
 
 import { useState } from "react";
 import Sidebar from "@/components/layout/Sidebar/Sidebar";
-import { studentProfile, studentMenu } from "@/data/sidebarData";
+import { teacherMenu } from "@/data/TeacherPageData";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { teacherMenu, teacherProfile } from "@/data/TeacherPageData";
+import { TeacherProvider, useTeacher } from "@/context/TeacherContext";
 
-export default function StudentLayout({ children }) {
+function TeacherLayoutContent({ children }) {
   const [collapsed, setCollapsed] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  // Generate breadcrumb items from the pathname
+  const { teacher, loading } = useTeacher();
+
+  const teacherProfile = {
+    name: teacher?.fullName || "Loading...",
+    role: teacher?.role || "Teacher",
+    avatar:
+      teacher?.avatar ||
+      "https://icons.iconarchive.com/icons/papirus-team/papirus-status/512/avatar-default-icon.png",
+  };
+
   const getBreadcrumbs = () => {
     const pathParts = pathname.split("/").filter((part) => part);
-    const breadcrumbs = [
+    return [
       { name: "Home", href: "/" },
       ...pathParts.map((part, index) => ({
-        name: part.charAt(0).toUpperCase() + part.slice(1), // Capitalize first letter
+        name: part.charAt(0).toUpperCase() + part.slice(1),
         href: `/${pathParts.slice(0, index + 1).join("/")}`,
       })),
     ];
-    return breadcrumbs;
   };
 
   const breadcrumbs = getBreadcrumbs();
 
+  if (loading) return <div className="p-10">Loading teacher data...</div>;
+
   return (
     <div className="flex min-h-screen bg-white">
+      {/* Sidebar with teacher info */}
       <Sidebar
         profile={teacherProfile}
         menuItems={teacherMenu}
@@ -38,18 +49,18 @@ export default function StudentLayout({ children }) {
         setIsMobileMenuOpen={setIsMobileMenuOpen}
       />
 
-      {/* Main content area */}
+      {/* Main content */}
       <main
         className={`flex-1 overflow-auto transition-all duration-300 pt-16 md:pt-0 p-4 sm:p-6 
-          ${collapsed ? "md:ml-20" : "md:ml-64"} ml-0`}
+        ${collapsed ? "md:ml-20" : "md:ml-64"} ml-0`}
       >
-        {/* Breadcrumb navigation */}
-        <nav className=" mt-10 px-6" aria-label="Breadcrumb">
+        {/* Breadcrumb */}
+        <nav className="mt-10 px-6" aria-label="Breadcrumb">
           <ol className="flex items-center space-x-2 text-sm text-gray-500">
             {breadcrumbs.map((crumb, index) => (
               <li
                 key={crumb.href}
-                className="flex items-center bg-blue-50 hover:bg-blue-100 transition-all py-1 px-4"
+                className="flex items-center bg-blue-50 hover:bg-blue-100 transition-all py-1 px-4 rounded-md"
               >
                 {index < breadcrumbs.length - 1 ? (
                   <>
@@ -70,8 +81,17 @@ export default function StudentLayout({ children }) {
             ))}
           </ol>
         </nav>
+
         <div className="p-6">{children}</div>
       </main>
     </div>
+  );
+}
+
+export default function TeacherLayout({ children }) {
+  return (
+    <TeacherProvider>
+      <TeacherLayoutContent>{children}</TeacherLayoutContent>
+    </TeacherProvider>
   );
 }
